@@ -1,3 +1,7 @@
+body{
+    display: flex;
+    justify-content: center;
+}
 .border-bg{
     box-sizing: border-box;
     position: relative;
@@ -90,10 +94,8 @@
 }
 
 
-/* #biohead{
-   left: 36px;
-}
-*/
+ 
+
 .bio{
     /*padding-top: 75px;*/
     position: absolute;
@@ -111,6 +113,17 @@
     color: #000000;
 }
 
+/*dt{
+    left:36px;
+}
+*/
+
+/*#biohead{
+    display: flex;
+    top:1080px;
+    left: 36px;
+ }
+*/
 
 footer{
     position: absolute;
