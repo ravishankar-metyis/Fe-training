@@ -1,0 +1,129 @@
+.border-bg{
+    box-sizing: border-box;
+    position: relative;
+    width: 1044px;
+    height: 1280px;
+    background: #E5E5FD;
+    border: 16px solid #1D1E4C;
+    display: flex;
+    justify-content: center;
+}
+
+.apj{
+    position: absolute;
+    width: 314px;
+    height: 392px;
+    left: 97px;
+    top: 80px;
+    background: url(A._P._J.jpg);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 170px;
+}
+
+#name{
+    /* A. P. J. Abdul Kalam */
+    position: absolute;
+    width: 600px;
+    height: 47px;
+    left: 435px;
+    top: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 20px; /* or 42% */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#year{
+    /* 1931-2015 */
+    position: absolute;
+    width: 133px;
+    height: 47px;
+    left: 782px;
+    top: 373px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    /* or 83% */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+#missile-man{
+    position: absolute;
+    width: 720px;
+    height: 62px;
+    left: 91px;
+    top: 465px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 20px;/* or 28% */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+#missile-def{
+    padding-top: 55px;
+    position: absolute;
+    width: 842px;
+    height: 176px;
+    left: 97px;
+    top: 557px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 22px;
+    /* or 183% */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+
+/* #biohead{
+   left: 36px;
+}
+*/
+.bio{
+    /*padding-top: 75px;*/
+    position: absolute;
+    width: 607px;
+    height: 218px;
+    left: 67px;
+    top: 890px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px; /* or 111% */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+
+footer{
+    position: absolute;
+    width: 348px;
+    height: 20px;
+    left: 636px;
+    top: 1216px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px; /* identical to box height, or 143% */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
