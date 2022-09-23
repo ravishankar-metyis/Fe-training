@@ -170,6 +170,35 @@
     order: 1;
     flex-grow: 0;
 }
+
+#expnbg{
+    position: relative;
+    width: 678px;
+    height: 126px;
+    left: 35%;
+    top: 25%;
+    
+    background: rgba(49, 53, 52, 0.2);
+}
+#expn{
+    position: absolute;
+    width: 546px;
+    height: 77px;
+    /*left: 5%;
+    right:5%;*/
+    top: 5%;
+    bottom:5%;
+    
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+    
+    /* identical to box height */
+    
+    color: #F7ECE5;
+}
 /*-------------------------------------------------------------------------------------------- */
 .sec3{
     position: absolute;
@@ -177,7 +206,7 @@
     height: 75vh;
     left: 0px;
     top: 2049px;
-    background: url(assets/SECTION\ 3.png);
+    background: url(assets/SECTION\ THREE.png);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -235,6 +264,33 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+
+#ldinbg{
+    position: relative;
+    width: 856px;
+    height: 126px;
+    left: 35%;
+    top: 25%;
+    
+    background: rgba(49, 53, 52, 0.2);
+}
+#ldin{
+    position: absolute;
+    width: 807px;
+    height: 77px;
+    left: 0px;
+    top: 0px;
+    
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+    
+    /* identical to box height */
+    
+    color: #F7ECE5;    
 }
 /*-------------------------------------------------------------------------------------------- */
 .last{
