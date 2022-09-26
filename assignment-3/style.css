@@ -1,4 +1,7 @@
-
+body{
+    margin:0;
+    padding:0;
+}
 .parent{
     display: flex;
     width:100vw;
@@ -20,17 +23,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.top{
-    /*position: absolute;*/
-    justify-content: center;
-    width: 678px;
-    height: 126px;
-    left: 381px;
-    top: 454px;
-    
-    background: #313534;
 }
 
 .textongrey{
@@ -55,11 +47,6 @@
 }    
 /*-------------------------------------------------------------------------------------------- */
 .parent .sec1{
-    /*position:absolute;*/
-    /*width: auto;*/
-    /*height: 30vh;*/
-    left: 0px;
-    /*top: 900px;*/
     background: #F4F4F4;
     flex-direction: column;
     text-align: center;
@@ -67,9 +54,6 @@
 }
 
 #sec1h{
-    /*position: absolute;*/
-    left:50%;
-    /*width: auto;*/
     height: 39px;
     justify-content:right;
     font-family: 'Lato';
@@ -123,8 +107,7 @@
 }
 
 .sec2container{
-    left: 2px;
-    top: 450px;
+    /*top: 450px;*/
     background: #313534;
     justify-content: center;
     flex-direction: column;
@@ -149,15 +132,6 @@
     color: #FFFFFF;
 }
 
-/*#expnbg{
-    /*position: relative;
-    width: 678px;
-    height: 126px;
-    left: 35%;
-    top: 25%;
-    
-    background: rgba(49, 53, 52, 0.2);
-} */
 #expn{
     font-family: 'Lato';
     font-style: normal;
@@ -174,7 +148,7 @@
 /*-------------------------------------------------------------------------------------------- */
 .sec3{
     position: relative;
-    width: 100vw;
+    /*width: 100vw;*/
     height:75vh;
 
     background: url(assets/SECTION\ THREE.png);
@@ -244,8 +218,8 @@
 }
 
 #dscbg{
-    width: 28vw;
-    height: 9vh;
+    /*width: 28vw;*/
+    /*height: 9vh;*/
     left: 690px;
     top: 345px;
     background: #313534;
