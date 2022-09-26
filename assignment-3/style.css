@@ -1,13 +1,7 @@
-/*body{
-    display: flex;
-    justify-content: center;
-} 
-*/
+
 .parent{
-    /*position:relative;*/
     display: flex;
-    /*flex-direction: column;
-    flex-wrap: wrap;*/
+    width:100vw;
     flex-flow: column nowrap;
 }
 
@@ -16,7 +10,7 @@
 }
 
 .first{
-    width: 100vw;
+    /*width: 100vw;*/
     height: 100vh;
     /*left: 0px;
     top: 0px;*/
@@ -62,11 +56,14 @@
 /*-------------------------------------------------------------------------------------------- */
 .parent .sec1{
     /*position:absolute;*/
-    width: auto;
-    height: 30vh;
+    /*width: auto;*/
+    /*height: 30vh;*/
     left: 0px;
     /*top: 900px;*/
     background: #F4F4F4;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 
 #sec1h{
@@ -74,7 +71,7 @@
     left:50%;
     /*width: auto;*/
     height: 39px;
-    /*justify-content: center;*/
+    justify-content:right;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
@@ -126,49 +123,30 @@
 }
 
 .sec2container{
-    /*position: relative;*/
-    width: 100vw;
-    height: 35vh;
     left: 2px;
     top: 450px;
     background: #313534;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 #sec2h{
-    /*position: relative;*/
-    width: 327px;
-    height: 66px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
     font-size: 40px;
     line-height: 58px;
-    /*align-items:center;
-    justify-content: center;*/
-    left:25%;
-    color: #FFFFFF;
-    
-    
+    color: #FFFFFF; 
 }
 
 #sec2b{
-    /*position: relative;*/
-    width: 1126px;
-    height: 150px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 29px;
-    /* or 161% */
-    left:25%;
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.05em;
     color: #FFFFFF;
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 /*#expnbg{
@@ -181,14 +159,11 @@
     background: rgba(49, 53, 52, 0.2);
 } */
 #expn{
-    /*width: 546px;
-    height: 77px;*/
     font-family: 'Lato';
     font-style: normal;
     font-weight: 600;
     font-size: 64px;
     line-height: 77px;
-    /* identical to box height */
     color: #F7ECE5;
     position: absolute;
     top: 50%;
@@ -207,10 +182,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*height: 75vh;*/
-    /*left: 0px;*/
-    /*top: 2049px;*/
-    /*background: url(assets/SECTION\ THREE.png);*/
+    
 }
 
 #ldin{
@@ -233,74 +205,36 @@
 }
 
 .parent .sec3container{
-    /*position: relative;*/
-    width: auto;
-    height: 350px;
-    left: 11px;
-    top: 450px;
     background: #313534;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 #sec3h{
-    /*position: absolute;*/
-    width: 366px;
-    height: 66px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
     font-size: 40px;
     line-height: 58px;
-    /*align-items: flex-end;*/
     color: #FFFFFF;
-    /* Inside auto layout */
-    left:45%;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 #sec3b{
-    /*position: relative;*/
-    width: 100vw;
-    height: 156px;
-    
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 22px;
-    /* align-items: flex-end;*/
     text-align: center;
     justify-content: center;
     letter-spacing: 0.05em;
-    left:25%;
-    right:25%;
     color: #FFFFFF;
-    
-    
-    /* Inside auto layout */
-    /*flex: none;
-    order: 1;
-    flex-grow: 0; */
 }
-
-/*#ldinbg{
-    /*position: relative;
-    width: 856px;
-    height: 126px;
-    left: 35%;
-    top: 25%;
-    
-    background: rgba(49, 53, 52, 0.2);
-}
-*/
 
 /*-------------------------------------------------------------------------------------------- */
 .last{
-    /*position: absolute;*/
-    /*width: 100vw;*/
     height: 100vh;
-    /*top: 2849px;*/
     position: relative;
     background: url(assets/LAST\ SECTION.png);
     background-attachment: fixed;
@@ -310,7 +244,6 @@
 }
 
 #dscbg{
-    /* position: relative;*/
     width: 28vw;
     height: 9vh;
     left: 690px;
@@ -318,10 +251,6 @@
     background: #313534;
 }
 #dsc{
-    /*width: 458px;
-    height: 95px;*/
-    /*justify-content: center;
-    align-items: center;*/
     position: absolute;
     top: 50%;
     left:50%;
@@ -331,15 +260,6 @@
     font-weight: 300;
     font-size: 40px;
     line-height: 58px;
-    
-    /* identical to box height */
- 
     color: #F7ECE5;
     background: #313534;
 }
-
-.center-aligned {
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-  }
