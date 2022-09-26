@@ -4,7 +4,7 @@ body{
 }
 .parent{
     display: flex;
-    width:100vw;
+    width:100%;
     flex-flow: column nowrap;
 }
 
@@ -26,10 +26,6 @@ body{
 }
 
 .textongrey{
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*width: 587px;*/
-    /*height: 77px;*/
     position: absolute;
     left: 50%;
     top: 50%;
@@ -72,8 +68,6 @@ body{
 
 #sec1b{
    /* position: absolute;*/
-    /*width: auto;
-    height: auto;*/
     /*height: 156px;*/
     
     font-family: 'Lato';
@@ -217,13 +211,6 @@ body{
     background-size: cover;
 }
 
-#dscbg{
-    /*width: 28vw;*/
-    /*height: 9vh;*/
-    left: 690px;
-    top: 345px;
-    background: #313534;
-}
 #dsc{
     position: absolute;
     top: 50%;
