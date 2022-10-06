@@ -1,6 +1,9 @@
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.container-fluid{
+  margin: 0;
+}
 
 .navi{
   background: #270082;
@@ -247,9 +250,9 @@ color: #000000;
 }
 /*====================================================================*/
 .foot{
-  display:flex;
+  /*display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between;*/
   background: #1B0058; 
   color: #FFFFFF;
 }
@@ -266,9 +269,9 @@ color: #000000;
 }
 
 .foot > div {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  flex-wrap:wrap;
+  flex-wrap:wrap;*/
 }
 .foot > span{
   font-family: 'Roboto';
@@ -280,6 +283,7 @@ color: #000000;
 }
 footer{
   text-align: center;
+  width: 100%;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
