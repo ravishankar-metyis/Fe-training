@@ -24,7 +24,7 @@
 .first{
   display: flex;
   flex-flow: row nowrap; 
-  justify-content: space-around; 
+  justify-content: space-evenly; 
 }
 
 .bowltext{
@@ -32,7 +32,7 @@
   flex-flow: column wrap; 
 }
 
-.bowltext .o1{
+.bowltext h1{
   /*overflow: hidden;*/
   width: 562px;  
   height: 168px;
@@ -221,5 +221,9 @@
   width: 265px;
   height: 24px;
   border: 0.2px solid #000000;
+}
+
+#socials i{
+  padding: 0px 5px 0px;
 }
 /*====================================================================================*/
