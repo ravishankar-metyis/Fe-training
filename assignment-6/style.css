@@ -3,7 +3,8 @@
 
 
 .navi{
-  background: #270082; 
+  background: #270082;
+  width:100%; 
 }
 .navbar-item{
   font-family: 'Roboto';
@@ -34,6 +35,12 @@ color: #FFFFFF;
   /*background: linear-gradient(2.25deg, rgba(0, 0, 0, 0.5) 0.68%, rgba(0, 0, 0, 0) 82.95%);*/
 }
 
+.mytu{
+  position: relative;
+  /*left:25%;*/
+  top:25%;
+  text-align: center;
+}
 .mytu > h1{
   font-family: 'Roboto';
   font-style: normal;
@@ -130,6 +137,7 @@ color: #FFFFFF;
   font-style: normal;
   text-align: center;
   align-content: center;
+  width:auto;
 }
 
 .third > span{
@@ -157,12 +165,12 @@ color: #FFFFFF;
 }
 .third > img{
   /*position:relative;*/
-  display: flex;
+  /*display: flex;*/
   padding-top: 50px;
   /*flex-flow: row wrap;*/ 
   /*justify-content: space-evenly;*/
   /*margin-left: 20vw;*/
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 /*====================================================================*/
@@ -170,6 +178,8 @@ color: #FFFFFF;
   /*background: linear-gradient(174.73deg, rgba(3, 0, 12, 0.67) 8.36%, rgba(34, 16, 89, 0.67) 95.78%);
   */
   background-image: url("assets/unsplash_aWXVxy8BSzc.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   /*background-size: cover;*/
   /*z-index: -1;*/
   width: 100%;
@@ -209,7 +219,10 @@ color: #FFFFFF;
   flex-wrap: nowrap; */
   padding: 97px 80px 83px 80px; 
 }
-
+/*.fifth > img{
+  width: 468px;
+height: 310px;
+}*/
 .fifth-text{
   /*flex-direction: row;
   flex-wrap: wrap;*/
@@ -223,14 +236,22 @@ color: #FFFFFF;
   line-height: 29px;
   color: #000000;
 }
+
+.fifth-text > p{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 29px;
+color: #000000;
+}
 /*====================================================================*/
 .foot{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #1B0058;
-
-
+  background: #1B0058; 
+  color: #FFFFFF;
 }
 
 .foot > h4{
