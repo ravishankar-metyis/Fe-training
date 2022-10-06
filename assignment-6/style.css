@@ -1,12 +1,40 @@
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.firstdiv{
-  background-image: url("assets/firstimg.png");
-  background: linear-gradient(2.25deg, rgba(0, 0, 0, 0.5) 0.68%, rgba(0, 0, 0, 0) 82.95%);
+
+.navi{
+  background: #270082; 
+}
+.navbar-item{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  color: #FFFFFF;
 }
 
-.firstdiv > h1{
+.navbar-brand{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+
+/* identical to box height, or 121% */
+
+color: #FFFFFF;
+}
+.firstdiv{
+  background-image: url("assets/firstimg.png");
+  height: 1024px;
+  width:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background: linear-gradient(2.25deg, rgba(0, 0, 0, 0.5) 0.68%, rgba(0, 0, 0, 0) 82.95%);*/
+}
+
+.mytu > h1{
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -15,7 +43,7 @@
   color: #FFFFFF;
 }
 
-.firstdiv > p{
+.mytu > p{
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -24,7 +52,7 @@
   color: #FFFFFF;
 }
 
-.firstdiv > span{
+.mytu > span{
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -71,6 +99,17 @@
   padding-bottom:17px;
 }
 
+.second > button{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 29px;
+
+/* identical to box height, or 161% */
+background: #DC0000;
+color: #FFFFFF;
+}
 #avail{
   font-family: 'Roboto';
   font-style: normal;
@@ -99,6 +138,17 @@
   color: #000000;
 }
 
+.third > button{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 29px;
+
+/* identical to box height, or 161% */
+background: #37008E;
+color: #FFFFFF;
+}
 .third > p{
   font-weight: 300;
   font-size: 18px;
@@ -154,15 +204,15 @@
   
 /*====================================================================*/
 .fifth{
-  display: flex;
+  /*display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap; */
   padding: 97px 80px 83px 80px; 
 }
 
 .fifth-text{
-  flex-direction: row;
-  flex-wrap: wrap;
+  /*flex-direction: row;
+  flex-wrap: wrap;*/
 }
 
 .fifth-text > span{
