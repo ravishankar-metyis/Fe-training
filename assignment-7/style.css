@@ -7,7 +7,7 @@
   padding-left: 70px;
 }
 .ytsearchbar{
-  width: 580px;
+  width: 70vw;
   height: 38px;
   background: #FFFFFF;
   border: 1px solid #E1E1E1;
@@ -19,12 +19,23 @@
   border-radius: 36px;
 }
 
+.searchbutt{
+  background: #E1E1E1;
+}
 #mic{
   border-radius: 50px;
 }
 
+.settings-icons > span{
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 23px;
+}
 .buttspace{
   display: flex;
+  padding-top:3px;
+  padding-bottom:3px;
+
   padding-left: 86px;
 }
 
@@ -86,6 +97,12 @@ div.content {
   }
 }
 
+@media (max-width: 415px){
+ .buttspace{
+   margin-left:0;
+   padding-left:0;
+ }
+}
 /*==================================================================*/
 body {
   background: #EEEEEE;
