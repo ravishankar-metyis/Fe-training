@@ -112,7 +112,7 @@ body {
   background: #EEEEEE;
 }
 div.content{
-  margin-left: 75px;
+  padding-left: 75px;
 }
 
 .collection{
@@ -126,10 +126,10 @@ div.content{
   padding-left:15px;
 }
 @media (max-width: 415px){
- .content{
+ div.content{
    min-width:100% !important;
    max-width:100% !important;
-   margin-left:0;
+   padding-left:0px;
  }
 }
 .video-post{
