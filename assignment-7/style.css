@@ -22,12 +22,14 @@
 
 .searchbutt{
   background: #E1E1E1;
-  padding-left: 15px;
+  /*margin-left: 15px;
+  margin-top: 0px;*/
 }
 #mic{
   width: 40px;
   height: 40px;
   border-radius: 50px;
+  margin-left: 15px;
 }
 
 .settings-icons > span{
@@ -140,10 +142,13 @@ div.content{
 
 .video-title{
   font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 12px;
-line-height: 14px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  overflow: hidden;
+  text-overflow: nowrap;
+  white-space: nowrap;
 }
 
 .channel-name{
