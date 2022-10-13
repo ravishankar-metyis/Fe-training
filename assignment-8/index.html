@@ -12,19 +12,40 @@
     
     <div class="container-fluid">
          <!-- The sidebar -->
-<div class="sidebar">
+<div class="sidebar d-none d-lg-block">
     <h1 class="sblocky">Javascript Documentation</h1>
-    <a class="sblocky" href="#home">Introduction</a>
-    <a href="#news" class="sblocky">What you should already know</a>
-    <a href="#contact" class="sblocky">JavaScript and Java</a>
-    <a href="#about" class="sblocky">Hello world</a>
-    <a href="#about" class="sblocky">Variables</a>
+      <a class="sblocky" href="#intro">Introduction</a>
+    <a href="#wut" class="sblocky">What you should already know</a>
+    <a href="#jaba" class="sblocky">JavaScript and Java</a>
+    <a href="#herro" class="sblocky">Hello world</a>
+    <a href="#var" class="sblocky">Variables</a>
   </div> <!-- Sidebar END-->
-  
+
+  <!-- Hamburger navbar in mobile view-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light d-block d-sm-none">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">Javascript Docs</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> 
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link" href="#intro">Introduction<span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="#wut">What you should already know</a>
+      <a class="nav-item nav-link" href="#jaba">JavaScript and Java</a>
+      <a class="nav-link" href="#herro">Hello World</a>
+      <a class="nav-link" href="#var">Variables</a>
+    </div>
+  </div>
+  </div>
+</nav>
+
+
+
   <!-- Page content -->
   <div class="content">
     <div class="row">
-        <div class="col-12"><h1>Introduction</h1></div>
+        <div class="col-12" id="intro"><h1>Introduction</h1></div>
 <!--        <div class="col"> -->
             <p class="col-12">JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language. Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.</p>
             <p class="col-12">JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects; for example:</p>
@@ -40,7 +61,7 @@
     </div>
 
     <div class="row">
-        <h1 class="col-12">What you should already know</h1>
+        <h1 class="col-12" id="wut">What you should already know</h1>
         <ul>
                 <li>
                     A general understanding of the Internet and the World Wide Web (WWW). 
@@ -55,13 +76,13 @@
     </div>
 
     <div class="row">
-        <h1 class="col-12">Javascript and Java</h1>
+        <h1 class="col-12" id="jaba">Javascript and Java</h1>
         <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
         <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.</p>
         <p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
     </div>
 
-    <div class="row">
+    <div class="row" id="herro">
         <h1 class="col-12">Hello World</h1>
         <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
         <div class="greybg col-12 p-4">
@@ -76,7 +97,7 @@ greetMe("World");
     </p>
     </div>
 
-    <div class="row">
+    <div class="row" id="var">
         <h1 class="col-12">Variables</h1>
         <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.</p>
         <p>A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
