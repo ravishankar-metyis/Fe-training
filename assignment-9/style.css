@@ -137,8 +137,6 @@ margin-right:34px;
 .booton{
   background: #6B46C1;
   border-radius: 5px;
-  display: flex;
-  justify-content: flex-end;
 }
 
 
@@ -175,4 +173,8 @@ color: #000000;
 
 .footersty > a{
     color: #454444;
+}
+
+.soize{
+    width: 765px;
 }
