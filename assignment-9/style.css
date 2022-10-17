@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 .container-fluid{
-    padding-left: 94px;
-    padding-right: 94px;
+    /*padding-left: 94px;
+    padding-right: 94px;*/
     font-family: 'Inter';
 }
 @media (max-width: 415px){
@@ -12,16 +12,26 @@
     padding-right: 0px;
     }
 }
-nav{
+.bg-light{
     background: #FFFFFF;
 }
 
 @media (max-width: 415px){
     .navbar{
+        text-align:right;
+    }
+}
+@media (max-width: 415px){
+    .navbar-nav{
         text-align:center;
     }
 }
-/*================================= POST =====================================
+@media (min-width: 800px){
+ .navbar-nav {
+            margin-left: auto;
+        }
+    }
+        /*================================= POST =====================================
 .posthead{
 font-family: 'Inter';
 font-style: normal;
@@ -127,6 +137,8 @@ margin-right:34px;
 .booton{
   background: #6B46C1;
   border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 
