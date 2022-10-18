@@ -125,7 +125,7 @@ margin-right:34px;
 .lastdiv{
     padding-top:43px;
     background: #F7FAFC;
-    background-size: cover; 
+    /*background-size: cover; */
 }
 
 @media (max-width: 415px){
@@ -137,6 +137,8 @@ margin-right:34px;
 .booton{
   background: #6B46C1;
   border-radius: 5px;
+  margin-left: 60vw;
+  margin-top: 10px;
 }
 
 
@@ -175,6 +177,11 @@ color: #000000;
     color: #454444;
 }
 
+/*@media (max-width: 415px){
+    .footersty{
+        padding-left: 30px;
+    }
+}*/
 .soize{
     width: 765px;
 }
