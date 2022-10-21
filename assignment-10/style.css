@@ -94,8 +94,9 @@ padding-bottom: 15px;
         padding-top: 2vh;
     }
     #imgparent{
-        padding-top:205px;
+        padding-top:120px;
         padding-left:25%;
+        padding-bottom: 8%;
     }
     .imgs{
         height: 320px;
