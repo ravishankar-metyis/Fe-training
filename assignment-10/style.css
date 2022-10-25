@@ -43,7 +43,6 @@ h1 {
 }
 #mtitle{
     font-weight: 600;
-font-size: 8vw;
 }
 
 .div1 > img{
@@ -79,6 +78,17 @@ padding-bottom: 15px;
 .cont{
     padding-right:40px;
 }
+@media (max-width: 400px){
+    .div1{
+        margin-left:0px;
+        margin-right: 0px;
+    }
+    .imgs{
+        padding-bottom: 25px;
+        padding-left: 35px;
+    }
+}
+
 @media (min-width: 700px){
     .div1 > img{
     padding-left:5%
@@ -128,3 +138,5 @@ padding-bottom: 35px;
 font-style: normal;
 color: #FFFFFF;
 }
+
+

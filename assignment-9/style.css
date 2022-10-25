@@ -192,3 +192,10 @@ color: #000000;
 .postz{
     padding-left:15%;
     }
+
+/*@media (max-width: 415px){
+    .footicons{
+        display: flex;
+        justify-content: center;
+    }
+} */
