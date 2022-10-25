@@ -30,6 +30,11 @@ background: #003D62;
 font-family: 'Poppins';
 font-style: normal;
 }
+#smol{
+    font-weight: 100;
+    font-size: 4vw;
+}
+
 h1 {
     color: #FFFFFF;
 }
