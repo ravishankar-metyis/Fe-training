@@ -14,7 +14,7 @@ function calculate() {
 }
 
 
-
+function calculate2(){
 var p = document.getElementById("result").value;
 const res = (p = '') => {
         let total = 0;
@@ -26,3 +26,4 @@ const res = (p = '') => {
 };
 sheesh = res(p);
 document.getElementById("result").value = sheesh;
+}

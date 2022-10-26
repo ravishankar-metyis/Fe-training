@@ -1,0 +1,23 @@
+body{
+    background-color: #ABC4A1;
+}
+
+.btn-primary{
+    background-color: #4B5842;
+}
+
+
+.calculator {
+    padding-top:35%;
+}
+
+
+@media (max-width: 415px) {
+    .calculator{
+        padding-top:55%;
+    }
+}
+
+.display-box{
+    background-color: #D4E79E;
+}
