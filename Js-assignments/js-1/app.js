@@ -17,7 +17,7 @@ function calculate() {
 }
 
 
-// Improved Function without eval
+// Improved Function without eval -> takes an input (eg. 1+4-3/5)
 let calc2 = () => {
     console.clear();
     let thing = document.getElementById("result").value; console.log("Value of thing: " + thing);
@@ -65,3 +65,84 @@ let calc2 = () => {
     document.getElementById("result").value = rez;
     document.getElementById("big-result").value = rez;
 }
+//=============================================================================================================
+// NEWER APPROACH
+class Calculator {
+    constructor(previousOperandTextElement, currentOperandTextelement) {
+        this.previousOperandTextElement = previousOperandTextElement;
+        this.currentOperandTextelement = currentOperandTextelement;
+    }
+}
+
+clear(){
+ this.previousOperand = '';
+ this.currentOperand = '';
+ this.operation = undefined;
+}
+
+delete(){
+   return 0; 
+}
+// Newer Function
+    result() {
+        let computation ;
+        const prev =  parseFloat(this.previousOperand);
+        const cuurrent = parseFloat(this.currentOperand);
+        
+        if (isNaN(prev) || isNaN(cuurrent)) return
+        switch(this.operation){
+            case '+':
+                computation = prev + current;
+                break;
+            case '-': 
+                computation = prev - current;
+                break;
+            case '*': 
+                computation = prev * current;
+                break;
+            case '/': 
+                computation = prev / current;
+                break;
+            default:
+                return;
+        }
+        this.currentOperand = computation;
+        this.operation = undefined ;
+        this.previousOperand = ''
+    }
+    
+appendNumber(number){
+    if(number === '.' && this.currentOperand.includes('.')) return;
+    this.currentOperand = this.currentOperand.toString() + number.toString();
+}
+
+chooseOperation(operation){
+    if(this.currentOperand === '') return;
+    if(this.previousOperand !== ''){
+        this.result();
+    }
+    this.operation = operation;
+    this.PreviousOperand = this.currentOperand;
+    this.currentOperand = '';
+}
+
+updateDisplay(){
+    this.currentOperandTextelement.innerText = this.currentOperand;
+    this.previousOperandTextElement.innerText = this.previousOperand;
+}
+
+const numberButtons = documents.querySelectorAll('[data-number]');
+const operationButtons = documents.querySelectorAll('[data-operation]');
+const equalsButton = documents.querySelectorAll('[data-equals]');
+const deleteButton = documents.querySelectorAll('[data-delete]');
+const clearButton = documents.querySelectorAll('[data-clear]');
+const previousOperandTextElement = documents.querySelectorAll('[data-prevous-operand]');
+const currentOperandTextelement = documents.querySelectorAll('[data-current-operand]');
+
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextelement);
+numberButtons.forEach(button => {
+    button.addEventListner('click', () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay()
+    })
+});

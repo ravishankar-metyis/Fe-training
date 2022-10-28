@@ -139,4 +139,9 @@ font-style: normal;
 color: #FFFFFF;
 }
 
-
+/*@media (max-width: 400px){
+    .footicons{
+        display: flex;
+        text-align: center;
+    }
+}*/
