@@ -12,7 +12,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 88vh;
     grid-template-columns: repeat(4,100px);
     grid-template-rows: minmax(120px, auto) repeat(5,100px);
 }
@@ -39,6 +39,7 @@ body {
     padding: 12px;
     word-wrap: break-word;
     word-break: break-all;
+    margin-top: 75%;
 }
 
 .output .previous-operand{
@@ -49,4 +50,9 @@ body {
 .output .current-operand{
     color: whitesmoke;
     font-size: 2.5rem;
+}
+
+.btt{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
