@@ -97,10 +97,10 @@ const reset = () => {
     minute = 0;
     second = 0;
     millisecond = 0;
-   document.getElementById('sw-hr').innerText = '00';
-   document.getElementById('sw-min').innerText = '00';
-   document.getElementById('sw-sec').innerText = '00';
-   document.getElementById('sw-ms').innerText = '000';   
+   document.getElementById('sw-hr').innerText = '00 h';
+   document.getElementById('sw-min').innerText = '00 m';
+   document.getElementById('sw-sec').innerText = '00 s';
+   document.getElementById('sw-ms').innerText = '000 ms';   
    console.log("Reset() executed!");  
 }
 

@@ -20,6 +20,15 @@ body {
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
+border-style: groove;
+border-color:#032B43;
+border-radius: 5px;
+
+}
+
+.lil{
+    padding-right:15px;
+    background-color: #709C8B;
 }
 #clock {
     max-width: 800px;
@@ -65,8 +74,7 @@ flex-wrap: wrap;
 */
 
 #stopwatch {
-    /*margin-top: 25px;*/
-    margin-left:1vw;
+    padding-top: 1vw;
     background-color:#247B7B;
     display: flex;
     flex-direction: column;
@@ -74,7 +82,6 @@ flex-wrap: wrap;
     color: #CCE8CC;
     border-radius: 5px;
     padding: 5px 5px 5px 5px;
-    justify-content: center;
     text-align: center;
 }
 #stopwatch button{
@@ -87,11 +94,13 @@ flex-wrap: wrap;
     width: 80px;
     height: 20px;
     transition: .3s;
+    justify-content: space-around;
 }
 #stopwatch span{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 /*ANIMATIONS*/
 .hvr-grow {
