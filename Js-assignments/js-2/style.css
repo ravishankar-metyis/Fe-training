@@ -24,11 +24,15 @@ flex-wrap: wrap;
 #clock {
     max-width: 800px;
     color: #A8DCD1;
+    font-weight: 600;
+    font-size: 5rem;
 }
 
 #date{
     color: #032B43;
     margin-left:1vw;
+    font-weight: 600;
+    font-size: 5rem;
 }
 /* for smaller screens below 700px */
 @media only screen and (max-width: 700px) {
@@ -37,7 +41,7 @@ flex-wrap: wrap;
 
 /*for smaller screens below 300px*/
 @media only screen and (max-width: 300px) {
-  body {font-size: 1.6rem;}
+  body {font-size: 1.6rem; font-weight: 400;}
 }
 
 
@@ -65,8 +69,8 @@ flex-wrap: wrap;
     margin-left:1vw;
     background-color:#247B7B;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     color: #CCE8CC;
     border-radius: 5px;
     padding: 5px 5px 5px 5px;
@@ -77,7 +81,7 @@ flex-wrap: wrap;
     transition: .3s;
     font-size: 18px;
     border: none;
-    background-color:#004F2D;
+    background-color:#849324;
     color: white;
     border-radius: 2px;
     width: 80px;
