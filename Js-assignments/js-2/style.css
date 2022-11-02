@@ -17,7 +17,9 @@ body {
 }
 
 .stuff{
-
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
 }
 #clock {
     max-width: 800px;
@@ -26,6 +28,7 @@ body {
 
 #date{
     color: #032B43;
+    margin-left:1vw;
 }
 /* for smaller screens below 700px */
 @media only screen and (max-width: 700px) {
@@ -38,7 +41,7 @@ body {
 }
 
 
-/* Buttons*/
+/* Buttons
 .butts{
     display: flex;
     flex-direction: row;
@@ -55,28 +58,36 @@ body {
     border-style:none;
     padding: 10px 10px 10px 10px;
 }
+*/
 
 #stopwatch {
-    margin-top: 25px;
+    /*margin-top: 25px;*/
+    margin-left:1vw;
+    background-color:#247B7B;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #CCE8CC;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    justify-content: center;
+    text-align: center;
 }
 #stopwatch button{
     transition: .3s;
-    font-size: 22px;
+    font-size: 18px;
     border: none;
-    background-color: #2e80b3;
+    background-color:#004F2D;
     color: white;
-    border-radius: 5px;
-    width: 140px;
-    height: 50px;
+    border-radius: 2px;
+    width: 80px;
+    height: 20px;
     transition: .3s;
 }
 #stopwatch span{
-  padding: 10px;
-  width: 55px;
-  border-radius: 5px;
-  margin: 3px;
-  display: inline-block;
-  margin-left: 20px; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 /*ANIMATIONS*/
 .hvr-grow {
