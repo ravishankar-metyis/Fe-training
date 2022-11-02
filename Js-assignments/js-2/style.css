@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
+
+/*html {
+  font-size: 62.5%; 
+}*/
+
+body {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #849324;
+  height: 100vh;
+}
+
+.stuff{
+
+}
+#clock {
+    max-width: 800px;
+    color: #A8DCD1;
+}
+
+#date{
+    color: #032B43;
+}
+/* for smaller screens below 700px */
+@media only screen and (max-width: 700px) {
+  body {font-size: 1.8rem;}
+}
+
+/*for smaller screens below 300px*/
+@media only screen and (max-width: 300px) {
+  body {font-size: 1.6rem;}
+}
+
+
+/* Buttons*/
+.butts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.butts > button {
+    font-size:1rem;
+    margin-right:10px;
+    background-color:#474747;
+    color:#BBE1BE;
+    border-radius: 5px;
+    border-style:none;
+    padding: 10px 10px 10px 10px;
+}
+
+#stopwatch {
+    margin-top: 25px;
+}
+#stopwatch button{
+    transition: .3s;
+    font-size: 22px;
+    border: none;
+    background-color: #2e80b3;
+    color: white;
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    transition: .3s;
+}
+#stopwatch span{
+  padding: 10px;
+  width: 55px;
+  border-radius: 5px;
+  margin: 3px;
+  display: inline-block;
+  margin-left: 20px; 
+}
+/*ANIMATIONS*/
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
