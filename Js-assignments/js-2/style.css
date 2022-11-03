@@ -156,4 +156,30 @@ text-align: center;
   animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+  z-index: 4;
+}
+
+/* DESKTOP ARRANNGEMENT */
+@media only screen and (min-width: 800px) {
+  .stuff{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    padding-top:60px;
+    padding-bottom: 60px;
+    border-style: none;
+    gap: 30px;
+  }
+
+  .lil{
+    height:100%;
+    padding-top:60px
+    font-size: 2rem;  
+  }
+
+  .timer{
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+  }
 }
