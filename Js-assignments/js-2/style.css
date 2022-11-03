@@ -102,6 +102,12 @@ border-radius: 5px;
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#timer{
+background-color: #98A886;
+padding-bottom:1vw;
+text-align: center;
+}
 /*ANIMATIONS*/
 .hvr-grow {
   display: inline-block;

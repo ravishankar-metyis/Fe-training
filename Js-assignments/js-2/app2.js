@@ -5,22 +5,33 @@ const clock = () => {
         let hr = today.getHours();
         let min = today.getMinutes();
         let sec = today.getSeconds();
+    
+        let when  = hr >=12 ? "PM" : "AM" ;
+        let hh = hr % 12;
+        if (hh ==0){
+          hh = 12;
+        }
 
+        //console.log()
         //12 hour format
-        let when = ""
-        if (hr==0){
+        //let when = ""
+        /*if (hr==0){
             hr = 12;
         }
-        else if(hr <= 12){
+        else if(hr < 12){
             when = "AM";
+        }
+        else if (hr == 12){
+          when = "PM";
         }
         else {
             when = "PM";
         }
+*/
 
-        let hh=hr; // for displaying time after 12pm 
+       // let hh=hr; // for displaying time after 12pm 
         if (hr > 12){hh = hr - 12;}
-
+        /*hr<10? hh="0"+hh : */
         //Date
         const dd = today.getDate(); 
         const mm = today.getMonth();
@@ -40,7 +51,6 @@ const clock = () => {
             "November",
             "December"
         ];
-
         //finalizing the time and date
         const date = months[mm] + " " + dd + ", " + yy ;
         const time  = hh + ":" + min + ":" + sec + " " + when;
@@ -54,33 +64,6 @@ const clock = () => {
 window.addEventListener("load", () => {
     setInterval(function () {clock()}, 1000); 
 });
-
-
-//STOPWATCH
-//let ms = document.getElementById('sw-ms');
-//let sec = document.getElementById('sw-sec');
-//let min = document.getElementById('sw-min');
-//let sw_timer = 0;
-//let timerInterval;
-
-//let swstop = () =>{
-//    clearInterval(timerInterval)
-//}
-
-//let swstart = () => {
-//    stop();
-//   timerInterval = setInterval(function() {
-//        sw_timer += 1/60;
-//        ms_val = Math.floor((sw_timer - Math.floor(sw_timer))*100);
-//        sec_val = Math.floor((sw_timer) - Math.floor(sw_timer/60)*60);
-//        min_val = Math.floor(sw_timer/60);
-        
-        //Giving values to HTML
-//        ms.innerHTML = ms_val < 10 ? "0" + ms_val.toString() : ms_val;
-//        sec.innerHTML = sec_val < 10 ? "0" + sec_val.toString() : sec_val;
-//        min.innerHTML = min_val < 10 ? "0" + min_val.toString() : min_val;
-//    }, 1000/60);
-//}
 
 
 // ====================================================================================
@@ -147,3 +130,23 @@ const timer = () => {
   console.log("timer function executed!");
 }
 
+//Timer
+let duration , duration_sec, goT;//,current_time;
+
+const startT = () =>{  
+  duration = document.getElementById('timer-duration').value;
+  duration_sec = duration * 60; // converting minutes to seconds
+  console.log("Duration = " + duration + " minutes or " + duration_sec + " seconds")
+  goT = setInterval(function(){t2();},1000);
+}
+
+const t2 = () => { 
+  const minutes = Math.floor(duration_sec/60);
+  let seconds = duration_sec % 60;
+  document.getElementById('countdown').innerHTML = `${minutes}m: ${seconds}s Left`;
+  duration_sec--;
+}
+
+const stopT = () => {
+  clearInterval(goT);
+}
