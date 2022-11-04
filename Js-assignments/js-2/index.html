@@ -11,7 +11,7 @@
 	<script src="app2.js"></script>
 
   <div class="stuff">
-      <div class="hvr-grow lil">
+      <div class="lil">
     <div id="clock"></div> 
     <div id="date"></div>
       </div>
@@ -19,7 +19,7 @@
       <button class="hvr-pulse-grow">Stopwatch</button>
             <button class="hvr-pulse-grow">Timer</button> -->
    
-    <div id="stopwatch" class="hvr-grow">
+    <div id="stopwatch">
         <div class="sw-time"> 
           <span id="sw-hr">00 h</span>
           <span id="sw-min">00 m</span>
@@ -33,8 +33,8 @@
         </div>
      </div>
 
-     <div id="timer" class="hvr-grow">
-      <span>Set Timer for <input type="text" id="timer-duration" placeholder="Minutes"><button onclick="startT()" class="timer-butt">Set timer</button><button  class="timer-butt" onclick="stopT()">Stop Timer</button></span>
+     <div id="timer">
+      <span>Set Timer for <input type="text" id="timer-duration" placeholder="Minutes"><button onclick="startT()" class="timer-butt" class="timer-butto">Start timer</button> <button onclick="stopT()" class="timer-butt">Stop Timer</button>
       <div id="countdown"></div>
     </div>
 

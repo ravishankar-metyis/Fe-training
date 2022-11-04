@@ -20,10 +20,9 @@ body {
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
-border-style: groove;
+/*border-style: groove;
 border-color:#032B43;
-border-radius: 5px;
-
+border-radius: 5px;*/
 }
 
 .lil{
@@ -188,9 +187,11 @@ text-align: center;
   }
 
   .timer{
+    display: flex;
     justify-content: center;
     text-align:center;
     align-items: center;
+    padding-top: 30%;
   }
  
  /*  #clock, #date{
@@ -200,7 +201,19 @@ text-align: center;
 
 
 @media only screen and (max-width: 450px) {
+  .stuff{
+    width:auto;
+    height:auto;
+    margin-left:10px;
+    margin-right: 10px;;
+  }
   #clock, #date {
     font-size: 5rem;
+  }
+  .lil{
+    margin-top: 10px;
+  }
+  .lil, #stopwatch, #timer{
+    margin-bottom:10px;
   }
 }
