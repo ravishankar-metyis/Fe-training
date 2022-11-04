@@ -76,13 +76,14 @@ let timeon;
 
 
 const reset = () => {
+    pause(); 
     hour = 0;
     minute = 0;
     second = 0;
     millisecond = 0;
    document.getElementById('sw-hr').innerText = '00 h';
    document.getElementById('sw-min').innerText = '00 m';
-   document.getElementById('sw-sec').innerText = '00 s';
+   document.getElementsByClassName('sw-sec').innerText = '00 s';
    document.getElementById('sw-ms').innerText = '000 ms';   
    console.log("Reset() executed!");  
 }
@@ -133,17 +134,31 @@ const timer = () => {
 //Timer
 let duration , duration_sec, goT;//,current_time;
 
-const startT = () =>{  
+const startT = () =>{
+  stopT();  
   duration = document.getElementById('timer-duration').value;
+  if (isNaN(duration)) {  
+   (duration == "")? document.getElementById('countdown').innerHTML = " " : document.getElementById('countdown').innerHTML = `Try entering a number.`;
+    return;} //will not accept invalid input
+  else{
   duration_sec = duration * 60; // converting minutes to seconds
-  console.log("Duration = " + duration + " minutes or " + duration_sec + " seconds")
+  console.log("Duration = " + duration + " minutes or " + duration_sec + " seconds");
   goT = setInterval(function(){t2();},1000);
+  }
 }
 
 const t2 = () => { 
   const minutes = Math.floor(duration_sec/60);
   let seconds = duration_sec % 60;
+  if(minutes == 0 && seconds == 0){
+  document.getElementById('countdown').innerHTML = `Time's up!`;
+  stopT();  //to prevent the value from becoming corrupt
+  minutes = seconds = 0; //resetting the mins and seconds for next input
+  return;
+  }
+  else{
   document.getElementById('countdown').innerHTML = `${minutes}m: ${seconds}s Left`;
+  }
   duration_sec--;
 }
 
