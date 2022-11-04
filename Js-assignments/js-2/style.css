@@ -34,14 +34,14 @@ border-radius: 5px;
     max-width: 800px;
     color: #A8DCD1;
     font-weight: 600;
-    font-size: 5rem;
+ /*   font-size: 5rem;*/
 }
 
 #date{
     color: #032B43;
     margin-left:1vw;
     font-weight: 600;
-    font-size: 5rem;
+  /*  font-size: 5rem;*/
 }
 /* for smaller screens below 700px */
 @media only screen and (max-width: 700px) {
@@ -93,7 +93,6 @@ border-radius: 5px;
     border-radius: 2px;
     width: 80px;
     height: 20px;
-    transition: .3s;
     justify-content: space-around;
 }
 #stopwatch span{
@@ -108,6 +107,19 @@ background-color: #98A886;
 padding-bottom:1vw;
 text-align: center;
 }
+
+.timer-butt{
+    transition: .3s;
+    font-size: 18px;
+    border: none;
+    background-color:#849324;
+    color: white;
+    border-radius: 2px;
+    margin-left:10px;
+    margin-right:10px;
+ }
+
+
 /*ANIMATIONS*/
 .hvr-grow {
   display: inline-block;
@@ -160,7 +172,7 @@ text-align: center;
 }
 
 /* DESKTOP ARRANNGEMENT */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 720px) {
   .stuff{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -172,14 +184,23 @@ text-align: center;
   }
 
   .lil{
-    height:100%;
     padding-top:60px
-    font-size: 2rem;  
   }
 
   .timer{
     justify-content: center;
     text-align:center;
     align-items: center;
+  }
+ 
+ /*  #clock, #date{
+    font-size: 2.5 rem;
+  } */
+} 
+
+
+@media only screen and (max-width: 450px) {
+  #clock, #date {
+    font-size: 5rem;
   }
 }
