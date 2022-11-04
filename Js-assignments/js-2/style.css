@@ -149,6 +149,7 @@ text-align: center;
     transform: scale(1.1);
   }
 }
+/*
 .hvr-pulse-grow {
   display: inline-block;
   vertical-align: middle;
@@ -169,6 +170,7 @@ text-align: center;
   animation-direction: alternate;
   z-index: 4;
 }
+*/
 
 /* DESKTOP ARRANNGEMENT */
 @media only screen and (min-width: 720px) {
@@ -199,7 +201,7 @@ text-align: center;
   } */
 } 
 
-
+/*Mobile view*/
 @media only screen and (max-width: 450px) {
   .stuff{
     width:auto;
