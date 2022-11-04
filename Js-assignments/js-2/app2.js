@@ -137,7 +137,7 @@ let duration , duration_sec, goT;//,current_time;
 const startT = () =>{
   stopT();  
   duration = document.getElementById('timer-duration').value;
-  if (isNaN(duration)) {  
+  if (isNaN(duration) || duration < 0) {  
    (duration == "")? document.getElementById('countdown').innerHTML = " " : document.getElementById('countdown').innerHTML = `Try entering a number.`;
     return;} //will not accept invalid input
   else{
