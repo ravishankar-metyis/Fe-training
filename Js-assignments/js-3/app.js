@@ -89,7 +89,7 @@ const validateip = () => {
     }
     
     //country
-    if(countryv === ''){
+    if(countryv == 'select-country'){
         setError(country, 'Country is required');
     } 
     else {
