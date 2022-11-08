@@ -66,3 +66,12 @@ body{
     font-size: 10px;
     height: 14px;
 }
+
+@media only screen and (max-width:380px) {
+   #form{
+    width:290px;
+    margin: 10vh auto 5vh auto;
+    padding: 20px;
+    background-color: /*#9F7F83;*/ #EBE9E9;
+   } 
+}
