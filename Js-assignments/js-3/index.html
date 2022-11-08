@@ -32,7 +32,12 @@
                 
                 <div class="form-control">  <!--Gender-->
                     <label for="gender">Gender</label>
-                    <input id="gender" name="gender" type="text">
+                    <select name="gender" id="gender" class="form-control">
+                        <option value="selectg">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="trans">Rather not say</option>
+                    </select>
                     <div class="error"></div>
                 </div>
                 
@@ -51,7 +56,7 @@
                 <div class="form-control">  <!--state-->
                     <label for="state">State</label>
                     <select name="state" id="state" class="form-control">
-                        <option value="select">Select a State</option>
+                        <option value="selects">Select a State</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -124,6 +129,27 @@
                 <button type="submit">Sign Up</button>
             </form>
 
-        </div> 
+        </div>
+        
+        <script>
+        //Validating on 'focus', in every element
+        /*
+    let x = document.getElementsByTagName("input") 
+    let y = document.getElementsByTagName("select");
+    for(i=0;i<x;i++) {
+    x[i].addEventListener('focusin', e=>{
+        e.preventDefault();
+
+         validateip();
+        });
+    }
+   for(i=0;i<y;i++){
+    y[i].addEventListener('focusin', e=>{
+        e.preventDefault();
+
+         validateip();
+        });
+    }*/
+    </script> 
   </body>
 </html>

@@ -11,6 +11,7 @@ const pincode = document.getElementById('pincode');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+//Validating the form on clicking the submit button
 form.addEventListener('submit', e=>{
    e.preventDefault();
 
@@ -33,9 +34,13 @@ const setSuccess = (element) => {
     formControl.classList.remove('error');
 }
 
-const isValidEmail = () => {
+const isValidEmail = (emailv) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    //const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    //const re = /\S+@\S+\.\S+/;
+    //const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    //return re.test(String(email).toLowerCase());
+    return emailv.match(re);
 }
 
 const validateip = () => {
@@ -68,7 +73,7 @@ const validateip = () => {
     }
    
     //gender
-    if(gv === ''){
+    if(gv == 'selectg'){
         setError(gender, 'Gender is required');
     } 
     else {
@@ -92,7 +97,7 @@ const validateip = () => {
     }
 
     //State
-    if(statev === '' || 'select'){
+    if(statev == '' || statev == 'selects'){
         setError(state, 'State is required');
     } 
     else {
@@ -110,9 +115,12 @@ const validateip = () => {
     //Pincode
     if(pinv === ''){
         setError(pincode, 'Pincode is required');
+    }
+    else if (isNaN(pinv)){
+        setError(pincode, 'Pincode should be a number!')
     } 
     else {
-        setSuccess(firstname);
+        setSuccess(pincode);
     }
 
     //Email
