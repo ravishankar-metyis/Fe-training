@@ -81,6 +81,14 @@ function validateInputField(inputDOM) {
                             setError(inputDOM, 'Password must be same!');
                             } 
                             break;
+        case 'email' : if(inputDOM.value.match(inputDOM.pattern) == true || inputDOM.value.length > 6) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Please enter your E-mail address');
+                            } 
+                            break;
+                    
  
         default: return;
     }

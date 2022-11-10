@@ -36,7 +36,7 @@
                 
                 <div class="form-control">  <!--E-mail-->
                     <label for="email">E-mail</label>
-                    <input id="email" name="email" type="text" data-missing-error="This field is required." title="Type E-mail address eg: example@website.com" data-pattern-mismatch="Please enter a valid E-Mail address" data-range-error="Must be 50 characters or less." value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+                    <input id="email" name="email" type="text" data-missing-error="This field is required." required title="Type E-mail address eg: example@website.com" data-pattern-mismatch="Please enter a valid E-Mail address" data-range-error="Must be 50 characters or less." value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
                     <div class="error"></div>
                 </div>
                 
@@ -135,7 +135,7 @@
                 
                 <div class="form-control">  <!--Password-->
                     <label for="password">Password</label>
-                    <input id="password" name="password" type="password" data-missing-error="This field is required." data-range-error="Minimum of 8 characters, no spaces" aria-describedby="form-password-error" autocomplete="off" value maxlength="255" minlength="8">
+                    <input id="password" name="password" type="password" data-missing-error="This field is required." required data-range-error="Minimum of 8 characters, no spaces" aria-describedby="form-password-error" autocomplete="off" value maxlength="255" minlength="8">
                     <div class="error"></div>
                 </div>
                 
