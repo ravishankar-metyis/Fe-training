@@ -10,33 +10,23 @@
   </head>
   <body>
         <div class="container">
-            <!-- <div class="container-2"> -->
-            <div class="desktop-filler">
-                <div class="filler-pic"></div>
-                <div id="filler-txt">
-                    <h1>We Got your back!</h1>
-                    <p>All shipping and customs will be carged at the bare minimum rates. That means you will be saving a lot of money.</p>
-                </div>
-            </div>
-            <div class="form-container">
             <form id="form" action="#" >
-                
                 <h1>Sign Up!</h1>
                 <div class="form-control">  <!--First Name-->
                     <label for="firstname">First Name</label>
-                    <input id="firstname" name="firstname" type="text" parse-error-msg="Please enter a valid First Name" data-missing-error="This field is required." required="" value="" minlength="2" maxlength="50" pattern="/^[a-zA-Z ]+$/">
+                    <input id="firstname" name="firstname" type="text">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Last Name-->
                     <label for="lastname">Last Name</label>
-                    <input id="lastname" name="lastname" type="text" parse-error-msg="Please enter a valid Last Name"  data-missing-error="This field is required." required="" value="" minlength="2" maxlength="50"  pattern="/^[a-zA-Z ]+$/">
+                    <input id="lastname" name="lastname" type="text">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--E-mail-->
                     <label for="email">E-mail</label>
-                    <input id="email" name="email" type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/">
+                    <input id="email" name="email" type="text">
                     <div class="error"></div>
                 </div>
                 
@@ -53,7 +43,7 @@
                 
                 <div class="form-control">  <!--Age-->
                     <label for="age">Age</label>
-                    <input id="age" name="age" type="number" maxlength="3" data-missing-error="This field is required."  >
+                    <input id="age" name="age" type="text">
                     <div class="error"></div>
                 </div>
                 
@@ -129,7 +119,7 @@
                 
                 <div class="form-control">  <!-- Pincode -->
                     <label for="pincode">Pincode</label>
-                    <input id="pincode" name="pincode" type="text" pattern="/^[1-9][0-9]{5}$/">
+                    <input id="pincode" name="pincode" type="text">
                     <div class="error"></div>
                 </div>
                 
@@ -146,8 +136,7 @@
                 </div>
                 <button type="submit">Sign Up</button>
             </form>
-            </div>
-           <!--  </div>  Container 2 end-->
+
         </div>
         
         <script>

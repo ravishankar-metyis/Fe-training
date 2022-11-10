@@ -24,26 +24,26 @@
                 <h1>Sign Up!</h1>
                 <div class="form-control">  <!--First Name-->
                     <label for="firstname">First Name</label>
-                    <input id="firstname" name="firstname" type="text" parse-error-msg="Please enter a valid First Name" data-missing-error="This field is required." required="" value="" minlength="2" maxlength="50" pattern="/^[a-zA-Z ]+$/">
+                    <input id="firstname" name="firstname" type="text" maxlength="10" parse-error-msg="Please enter a valid First Name" data-missing-error="This field is required." data-range-error="Must be 10 characters ." value pattern="^[a-zA-Z\s]+$">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Last Name-->
-                    <label for="lastname">Last Name</label>
-                    <input id="lastname" name="lastname" type="text" parse-error-msg="Please enter a valid Last Name"  data-missing-error="This field is required." required="" value="" minlength="2" maxlength="50"  pattern="/^[a-zA-Z ]+$/">
+                    <label for="lastname" >Last Name</label>
+                    <input id="lastname" name="lastname" type="text" maxlength="10" parse-error-msg="Please enter a valid Last Name" data-missing-error="This field is required." data-range-error="Must be 10 characters ."  alue pattern="^[a-zA-Z\s]+$">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--E-mail-->
                     <label for="email">E-mail</label>
-                    <input id="email" name="email" type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/">
+                    <input id="email" name="email" type="text" data-missing-error="This field is required." title="Type E-mail address eg: example@website.com" data-pattern-mismatch="Please enter a valid E-Mail address" data-range-error="Must be 50 characters or less." value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Gender-->
                     <label for="gender">Gender</label>
                     <select name="gender" id="gender" class="form-control">
-                        <option value="selectg">Select Gender</option>
+                        <option value="select">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="trans">Rather not say</option>
@@ -53,7 +53,7 @@
                 
                 <div class="form-control">  <!--Age-->
                     <label for="age">Age</label>
-                    <input id="age" name="age" type="number" maxlength="3" data-missing-error="This field is required."  >
+                    <input id="age" name="age" type="text">
                     <div class="error"></div>
                 </div>
                 
@@ -73,7 +73,7 @@
                 
                 <div class="form-control">  <!--state-->
                     <label for="state">State</label>
-                    <select name="state" id="state" class="form-control">
+                    <select name="state" id="state" class="form-control" title="Select a State">
                         <option value="selects">Select a State</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -135,7 +135,7 @@
                 
                 <div class="form-control">  <!--Password-->
                     <label for="password">Password</label>
-                    <input id="password" name="password" type="password">
+                    <input id="password" name="password" type="password" data-missing-error="This field is required." data-range-error="Minimum of 8 characters, no spaces" aria-describedby="form-password-error" autocomplete="off" value maxlength="255" minlength="8">
                     <div class="error"></div>
                 </div>
                 

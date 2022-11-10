@@ -1,12 +1,4 @@
-const form = document.getElementById('form');
-
-//Validating the form on clicking the submit button
-/*form.addEventListener('click', e=>{
-   e.preventDefault();
-
-   validateip();
-}); */
-
+//seperate functions
 const setError = (element, message) => {
     const formControl = element.parentElement;
     const errorDisp = formControl.querySelector('.error');
@@ -23,30 +15,29 @@ const setSuccess = (element) => {
     formControl.classList.remove('error');
 }
 
-const isValidEmail = (emailv) => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    //const re = /\S+@\S+\.\S+/;
-    //const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    //return re.test(String(email).toLowerCase());
-    return emailv.match(re);
+const isValidEmail = (emailv, emailRegex) => {
+    let rez = emailRegex.match(emailv);
+    return rez;
 }
 
 //First Name
-const fnf = () =>{    
-    const firstname = document.getElementById('firstname');
-    const fnv = firstname.value.trim();
+const fnf = (tempId) =>{
+    const firstnameid = tempId.id;
+    const fnv= tempId.value.trim();
     if(fnv === ''){
-        setError(firstname, 'First name is required');
+        setError(firstnameid, 'First Name is required');
+    }
+    else if(fnv.match(firstnameid.pattern) == false) {
+        setError(firstnameid, "First Name shouldn't be a number")
     } 
     else {
-        setSuccess(firstname);
+        setSuccess(firstnameid);
     }
 }
 
     //Last Name
-const lnf = () =>{
-    const lastname = document.getElementById('lastname');
+const lnf = (tempId) =>{
+    const lastname = tempId;
     const lnv= lastname.value.trim();
     if(lnv === ''){
         setError(lastname, 'Last name is required');
@@ -56,9 +47,9 @@ const lnf = () =>{
     }
 }
 
-const gf = () =>{
+const gf = (tempId) =>{
     //gender
-    const gender = document.getElementById('gender');
+    const gender = tempId;
     const gv = gender.value.trim();
     if(gv == 'selectg'){
         setError(gender, 'Gender is required');
@@ -68,10 +59,10 @@ const gf = () =>{
     }
 }
 
-
- const af = () =>{   
+ const af = (tempId) =>{   
     //age
-    const age = document.getElementById('age');
+
+    const age = tempId;
     const agev = age.value.trim();
     if(agev === ''){
         setError(age, 'Age is required');
@@ -81,9 +72,9 @@ const gf = () =>{
     }
  }
 
-const cf = () =>{
+const cf = (tempId) =>{
     //country
-    const country = document.getElementById('country');
+    const country = tempId;
     const countryv = country.value.trim();
     if(countryv == 'select-country'){
         setError(country, 'Country is required');
@@ -93,9 +84,9 @@ const cf = () =>{
     }
 }
 
-const sf = () =>{
+const sf = (tempId) =>{
     //State
-    const statev = state.value.trim();
+    const statev = tempId.value.trim();
     const state = document.getElementById('state');
     if(statev == '' || statev == 'selects'){
         setError(state, 'State is required');
@@ -105,9 +96,9 @@ const sf = () =>{
     }
 }
 
-const adf = () =>{
+const adf = (tempId) =>{
     //Address
-    const address = document.getElementById('address');
+    const address = tempId.trim();
     const addressv = address.value.trim();
     if(addressv === ''){
         setError(address, 'Address is required');
@@ -117,14 +108,16 @@ const adf = () =>{
     }
 }
 
-const pinf = () =>{
+const pinf = (tempId) =>{
     //Pincode
-    const pincode = document.getElementById('pincode');
-    const pinv= pincode.value.trim();
+    const pincode =tempId.id;
+    const pinRegex = tempId.pattern;
+    const pinv= tempId.value.trim();
+    let rez = pinv.match(pinRegex);
     if(pinv === ''){
         setError(pincode, 'Pincode is required');
     }
-    else if (isNaN(pinv)){
+    else if (rez != true){
         setError(pincode, 'Pincode should be a number!')
     } 
     else {
@@ -132,35 +125,38 @@ const pinf = () =>{
     }
 }
 
-const emf = () =>{
+const emf = (tempId) =>{
     //Email
-    const email = document.getElementById('email');
+    const emailRegex = tempId.pattern;
+    const email = tempId;
     const emailv = email.value.trim();
     if(emailv === '') {
         setError(email, 'Email is required');
-    } else if (!isValidEmail(emailv)) {
+    } else if (isValidEmail(emailv,emailRegex) != true) {
         setError(email, 'Please provide a valid email address');
     } else {
         setSuccess(email);
     }
 }
 
-const passf = () =>{
+const passf = (tempId) =>{
     //Pass
-    const password = document.getElementById('password');
+    const password =tempId;
     const passwordv= password.value.trim();
+    const passRegex= password.pattern;
+    let rez = passRegex.test(passwordv);
     if(passwordv === '') {
         setError(password, 'Password is required');
-    } else if (passwordv.length < 8 ) {
+    } else if (passwordv.length < 8 && rez != true) {
         setError(password, 'Password must be at least 8 characters.')
     } else {
         setSuccess(password);
     }
 }
 
-const repassf = () =>{
+const repassf = (tempId) =>{
     //Re-type pass
-    const password2 = document.getElementById('password2');
+    const password2 =tempId.trim();
     const password2v= password2.value.trim();
     if(password2v === '') {
         setError(password2, 'Please confirm your password');
@@ -171,68 +167,43 @@ const repassf = () =>{
     }
 }
 
-const validateip = () => {
+//=============================================================================================
+const formInput = document.querySelectorAll('#form input');
+const formSelect = document.querySelectorAll('#form select');
 
-    fnf();
-    lnf();
-    af();
-    gf();
-    adf();
-    emf();
-    sf();
-    cf();
-    pinf();
-    passf();
-    repassf();
-    
+function validateInputField(inputDOM) {
+    switch(inputDOM.id){
+        case 'firstname' :  fnf(inputDOM); 
+                            break;
+        case 'lastname' : lnf(inputDOM);break;
+        case 'email' : emf(inputDOM);break;
+        case 'age' : af(inputDOM);break;
+        case 'city' : validateip(inputDOM);break;
+        case 'address' : adf(inputDOM);break;
+        case 'pincode' : pinf(inputDOM);break;
+        case 'password' : passf(inputDOM);break;
+        case 'password2' : repassf(inputDOM);break; 
+        default: return;  
+}
 }
 
-
-let x = document.getElementsByTagName("input") ;
-let y = document.getElementsByTagName("select");
-/*for(i=0;i<x;i++) {
-    x[i].addEventListener('click', e=>{
-        e.preventDefault();
-
-         validateip();
-        });
-    }
-   for(i=0;i<y;i++){
-    y[i].addEventListener('clcik', e=>{
-        e.preventDefault();
-
-         validateip();
-        });
-*/
-
-//const ids = ['firstname','lastname','email','gender','age','country','state','city','address','pincode','password','password2'];
-for(i=0;i<x;i++) {
-    x[i].addEventListener('focusin',() =>{
-        switch(x[i].id){
-           case 'firstname' : fnf();break;
-           case 'lastname' : lnf();break;
-           case 'email' : fnf();break;
-           case 'age' : af();break;
-           case 'city' : validateip();break;
-           case 'address' : adf();break;
-           case 'pincode' : pinf();break;
-           case 'password' : passf();break;
-           case 'password2' : repassf();break; 
-           default: return();
-        }
-    
+function validateSelectField(inputDOM) {
+   console.log(inputDOM.value);
+   switch(inputDOM.id){
+        case 'country' :  cf(inputDOM); break;
+        case 'state' : sf(inputDOM);break; 
+        default: return;  
+}
+}
+for(i=0;i<formInput.length;i++) {
+    formInput[i].addEventListener('keyup',(e) =>{
+       console.log(e.target.pattern); 
+        validateInputField(e.target);
     })
-    }
-
-for(i=0;i<y;i++) {
-    y[i].addEventListener('click',() =>{
-        switch(y[i].id){
-           case 'gender' : gf();break;
-           case 'country' : cf();break;
-           case 'state' : sf();break;
-           default: return();
-        }
-    
+ formSelect[i].addEventListener('keyup',(e) =>{
+       console.log(e); 
+        validateSelectField(e.target);
     })
-    }
+}
+
 
