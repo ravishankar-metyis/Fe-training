@@ -145,3 +145,7 @@ body{
     }
     
 }
+
+form:invalid>#submit {
+    pointer-events: none;
+  }
