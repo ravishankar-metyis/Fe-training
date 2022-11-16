@@ -75,7 +75,10 @@ function validateSelectField(inputDOM) {
 const formInput = document.querySelectorAll('#form input');
 const formSelect = document.querySelectorAll('#form select');
 
-let formAttrState = 0;
+let formAttrState = 0; //counts the number of input fields that have been successfully validted
+
+
+
     for(i=0;i<formInput.length;i++) {
         const formControl = formInput[i].parentElement;
         formInput[i].addEventListener('keyup',(e) =>{
@@ -102,14 +105,9 @@ let formAttrState = 0;
         }
     
 
-
-
 const dispMsg = () =>{
    
-/*    document.getElementById("submit").addEventListener("click", function(event){
-  event.preventDefault();
-}); */
-    for(i=0;i<formInput.length;i++) {
+        for(i=0;i<formInput.length;i++) {
         const formControl = formInput[i].parentElement;
         if(formControl.hasAttribute('data-verified')){
             formAttrState++;
@@ -145,6 +143,12 @@ const dispMsg = () =>{
         window.alert("All fields haven't been filled correctly! Please see to it.");
     }
 }
+//====================================================================================
+document.getElementById("submit").addEventListener("click", function(event){
+  event.preventDefault();
+  dispMsg(); 
+});
+
 
 
 /*
