@@ -133,9 +133,11 @@ const dispMsg = () =>{
     console.log('formAttrState = ' + formAttrState);
     if(formAttrState == 12){
     console.log("Entered Display function");
-    document.querySelector('.form-container').style.display = "block";
+    //document.querySelector('.form-container').style.display = "block";
     document.querySelector('#form').style.display = "none";
     console.log("Executed ");
+    document.querySelector('.form-container').style.textAlign = 'center';
+    document.querySelector('.form-container').style.paddingTop = '60%'
     document.querySelector('.form-container').innerText = "Thank You for filling the form Correctly 😁 ";
     }
     
