@@ -126,6 +126,7 @@ body{
         /*margin-left: 20px;*/
         margin-top:10vh;
         /*box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);*/
+        background-color: /*#9F7F83;*/ #EBE9E9;
     } 
 
 
@@ -138,14 +139,14 @@ body{
         font-size: 12px;        
     }
 
-    .desktop-filler > h1,p{
+    /*.desktop-filler > h1,p{
         /*display: bock;
         margin-top:50%;*/
 
-    }
+    } */
     
 }
 
-form:invalid>#submit {
+/*form:invalid>#submit {
     pointer-events: none;
-  }
+  }*/

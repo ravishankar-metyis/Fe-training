@@ -15,122 +15,155 @@ const setSuccess = (element) => {
 }
 
 
-const formInput = document.querySelectorAll('#form input');
-const formSelect = document.querySelectorAll('#form select');
 
 function validateInputField(inputDOM) {
-    switch(inputDOM.id){
-         case 'firstname' :  if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'First Name is required');
-                            } 
-                            break;
-        case 'lastname' : if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Last Name is required');
-                            } 
-                            break;
-        case 'email' : emf(inputDOM);break;
-        case 'age' : if(inputDOM.value != '' && isNaN(inputDOM.value) == false) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Age should be a number!');
-                            } 
-                            break;
-        case 'city' :if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'City is required');
-                            } 
-                            break;
-        case 'address' : if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Address is required');
-                            } 
-                            break;
-        case 'pincode' : 
-                        if(inputDOM.value != '' && isNaN(inputDOM.value) == false) {
-                            setSuccess(inputDOM);
-                            }
-
-                            else{
-                            setError(inputDOM, 'Pincode is required to be a 6 digit number');
-                            } 
-                            break;
-
-        case 'password' : if(inputDOM.value != '' && inputDOM.value.length >= 8) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Password is required');
-                            } 
-                            break;
-
-        case 'password2' : if(inputDOM.value == document.getElementById('password').value) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Password must be same!');
-                            } 
-                            break;
-        case 'email' : if(inputDOM.value.match(inputDOM.pattern) == true || inputDOM.value.length > 6) {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Please enter your E-mail address');
-                            } 
-                            break;
-                    
- 
-        default: return;
+    let value = inputDOM.value;
+    let pattern = inputDOM.pattern;
+   //let parent =  inputDOM.parentElement;
+    if(value == '') {
+        setError(inputDOM, inputDOM.getAttribute('data-missing-error'));
+        return true;
     }
+
+    let regex= new RegExp(pattern,'g');
+    if(regex.test(value)){
+    setSuccess(inputDOM);
+    return true;
+   }
+      //retype password check
+   else if(inputDOM.id == 'password2' && value === document.getElementById('password').value){
+    console.log(regex.test(value));
+    setSuccess(inputDOM);
+    return true;
+   }
+ 
+    else {
+    setError(inputDOM,inputDOM.getAttribute('parse-error-msg'));
+    return false;
+   }
+
+  
+   
+   /*console.log(value)
+   console.log(pattern)
+   console.log(parent)
+*/
+
 }
 
 function validateSelectField(inputDOM) {
-    switch(inputDOM.id){
-         case 'country' :  if(inputDOM.value != 'select') {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Select a Country from the drop down menu');
-                            } 
-                            break;
-        case 'state' : if(inputDOM.value != 'select') {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Select a State from the drop down menu');
-                            } 
-                            break;
-        case 'gender' :if(inputDOM.value != 'select') {
-                            setSuccess(inputDOM);
-                            }
-                            else{
-                            setError(inputDOM, 'Select a gender from the drop down menu');
-                            } 
-                            break;
-                        }
-                    } 
-for(i=0;i<formInput.length;i++) {
-    formInput[i].addEventListener('keyup',(e) =>{
-       //console.log(e.target); 
-        validateInputField(e.target);
-    })}
+    
+    let value = inputDOM.value;
+    let pattern = inputDOM.pattern;
+    if(value == 'select') {
+        setError(inputDOM, inputDOM.getAttribute('data-missing-error'));
+        return true;
+    }
 
+    let regex= new RegExp(pattern,'g');
+    if(regex.test(value)){
+    setSuccess(inputDOM);
+        return true;
+   }
+   else {
+    setError(inputDOM,inputDOM.getAttribute('data-missing-error'));
+        return false;
+   }
+    } 
+                
 
-for(j=0;j<formInput.length;j++) {
-formselect[i].addeventlistener('click',(e) =>{
+const formInput = document.querySelectorAll('#form input');
+const formSelect = document.querySelectorAll('#form select');
+
+let formAttrState = 0;
+    for(i=0;i<formInput.length;i++) {
+        const formControl = formInput[i].parentElement;
+        formInput[i].addEventListener('keyup',(e) =>{
+       if( validateInputField(e.target)){
+        formControl.setAttribute('data-verified','true');
+        console.log('Attribute set to true for ' + formControl);
+    }
+        else {
+        formControl.removeAttribute('data-verified');
+        console.log('Attribute removed for ' + formControl);}
+        });  
+        }  
+    
+
+    for(j=0;j<formSelect.length;j++) {
+        const formControl = formSelect[j].parentElement;
+    formSelect[j].addEventListener('change',(e) =>{
        console.log(e); 
-        validateselectfield(e.target);
-    })
+        if(validateSelectField(e.target)){
+        formControl.setAttribute('data-verified','true');}
+        else{
+        formControl.removeAttribute('data-verified');}
+        });
+        }
+    
+
+
+
+const dispMsg = () =>{
+   
+/*    document.getElementById("submit").addEventListener("click", function(event){
+  event.preventDefault();
+}); */
+    for(i=0;i<formInput.length;i++) {
+        const formControl = formInput[i].parentElement;
+        if(formControl.hasAttribute('data-verified')){
+            formAttrState++;
+        }  
+        else{
+            if(formAttrState !=0){
+            formAttrState--;
+        }
+        }   
+    }
+
+    for(j=0;j<formSelect.length;j++) {
+        const formControl = formSelect[j].parentElement;
+        if(formControl.hasAttribute('data-verified')){
+    formAttrState++;
+        }  
+        else{
+            if(formAttrState !=0){
+            formAttrState--;
+            }
+        }
+    }
+    console.log('formAttrState = ' + formAttrState);
+    if(formAttrState == 12){
+    console.log("Entered Display function");
+    document.querySelector('.form-container').style.display = "block";
+    document.querySelector('#form').style.display = "none";
+    console.log("Executed ");
+    document.querySelector('.form-container').innerText = "Thank You for filling the form Correctly 😁 ";
+    }
+    
+    else{
+        window.alert("All fields haven't been filled correctly! Please see to it.");
+    }
 }
 
 
+/*
+const checker = () =>{
+    let formStateList = document.getElementsByClassName('success');
+    console.log('Successfull form fields = ' + formStateList.length);
+    let buttState =  document.getElementById("submit").disabled;
+    if(formStateList.length == 12){
+        buttState=true;
+      }
+    else{
+        buttState=false;
+    }
+    console.log(`Button active state has been toggled to ${buttState}`);
+  }
+*/
+
+  //setInterval(checker,1000);
+
+//const submitForm = () =>{
+
+//}

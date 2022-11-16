@@ -18,13 +18,13 @@
                     <p>All shipping and customs will be carged at the bare minimum rates. That means you will be saving a lot of money.</p>
                 </div>
             </div>
-            <div class="form-container">
-            <form id="form" action="#" >
+            <div class="form-container" style="display:block;">
+            <form id="form">
                 
                 <h1>Sign Up!</h1>
                 <div class="form-control">  <!--First Name-->
                     <label for="firstname">First Name</label>
-                    <input id="firstname" name="firstname" type="text" maxlength="10" parse-error-msg="Please enter a valid First Name" data-missing-error="This field is required." data-range-error="Must be 10 characters ." value pattern="^[a-zA-Z\s]+$">
+                    <input id="firstname" name="firstname" type="text" parse-error-msg="Please enter a valid First Name" data-missing-error="This field is required."  value pattern="^[a-zA-Z\s]+$" data-verified="">
                     <div class="error"></div>
                 </div>
                 
@@ -36,13 +36,13 @@
                 
                 <div class="form-control">  <!--E-mail-->
                     <label for="email">E-mail</label>
-                    <input id="email" name="email" type="text" data-missing-error="This field is required." required title="Type E-mail address eg: example@website.com" data-pattern-mismatch="Please enter a valid E-Mail address" data-range-error="Must be 50 characters or less." value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+                    <input id="email" name="email" type="text" data-missing-error="This field is required." title="Type E-mail address eg: example@website.com" parse-error-msg="Please enter a valid E-Mail address" value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Gender-->
                     <label for="gender">Gender</label>
-                    <select name="gender" id="gender" class="form-control">
+                    <select name="gender" id="gender" class="form-control" parse-error-msg="Please select a Gender" data-missing-error="This field is required." >
                         <option value="select">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -53,15 +53,15 @@
                 
                 <div class="form-control">  <!--Age-->
                     <label for="age">Age</label>
-                    <input id="age" name="age" type="text">
+                    <input id="age" name="age" type="text" parse-error-msg="Please enter a valid Age (in numbers)" data-missing-error="This field is required." pattern='^[1-9][0-9]?$|^150$'  minlength="1" maxlength="3">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Country-->
                     <label for="country">Country</label>
                    <!--  <input id="country" name="county" type="text"> -->
-                   <select name="country" id="country" class="form-control">
-                        <option value="select-country">Select a Country</option>
+                   <select name="country" id="country" class="form-control" data-missing-error="This field is required.">
+                        <option value="select">Select a Country</option>
                         <option value="India">India</option>
                         <option value="Japan">Japan</option>
                         <option value="Germany">Germany</option>
@@ -73,8 +73,8 @@
                 
                 <div class="form-control">  <!--state-->
                     <label for="state">State</label>
-                    <select name="state" id="state" class="form-control" title="Select a State">
-                        <option value="selects">Select a State</option>
+                    <select name="state" id="state" class="form-control" title="Select a State" data-missing-error="This field is required.">
+                        <option value="select">Select a State</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -117,58 +117,38 @@
                 
                 <div class="form-control">  <!--city-->
                     <label for="city">City</label>
-                    <input id="city" name="city" type="text">
+                    <input id="city" name="city" type="text" parse-error-msg="Enter a vlaid city name with letters" data-missing-error="This field is required." pattern="^[a-zA-Z\s]+$">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!-- Address-->
                     <label for="address">Address</label>
-                    <input id="address" name="address" type="text">
+                    <input id="address" name="address" type="text" data-missing-error="This field is required.">
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!-- Pincode -->
                     <label for="pincode">Pincode</label>
-                    <input id="pincode" name="pincode" type="text" pattern="/^[1-9][0-9]{5}$/">
+                    <input id="pincode" name="pincode" type="text" pattern='^[1-9][0-9]{5}$'>
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Password-->
                     <label for="password">Password</label>
-                    <input id="password" name="password" type="password" data-missing-error="This field is required." required data-range-error="Minimum of 8 characters, no spaces" aria-describedby="form-password-error" autocomplete="off" value maxlength="255" minlength="8">
+                    <input id="password" name="password"  data-missing-error="This field is required." parse-error-msg="Enter at least 6 charcters including numbers"  autocomplete="off" value maxlength="255" >
                     <div class="error"></div>
                 </div>
                 
                 <div class="form-control">  <!--Re-enter Password-->
                     <label for="password2">Re-type password</label>
-                    <input id="password2" name="password2" type="password">
+                    <input id="password2" name="password2"  data-missing-error="This field is required."  parse-error-msg="Password should be same as the one above." value maxlength="255" >
                     <div class="error"></div>
                 </div>
-                <button type="submit" id="submit">Sign Up</button>
+                <button id="submit" onclick="dispMsg()">Sign Up</button>
             </form>
             </div>
            <!--  </div>  Container 2 end-->
         </div>
         
-        <script>
-        //Validating on 'focus', in every element
-        /*
-    let x = document.getElementsByTagName("input") 
-    let y = document.getElementsByTagName("select");
-    for(i=0;i<x;i++) {
-    x[i].addEventListener('focusin', e=>{
-        e.preventDefault();
-
-         validateip();
-        });
-    }
-   for(i=0;i<y;i++){
-    y[i].addEventListener('focusin', e=>{
-        e.preventDefault();
-
-         validateip();
-        });
-    }*/
-    </script> 
   </body>
 </html>

@@ -39,3 +39,104 @@ for(i=0;i<formInput.length;i++) {
     })
 }   
 
+
+/*    switch(inputDOM.id){
+         case 'firstname' :  if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'First Name is required');
+                            } 
+                            break;
+        case 'lastname' : if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Last Name is required');
+                            } 
+                            break;
+        case 'email' : emf(inputDOM);break;
+        case 'age' : if(inputDOM.value != '' && isNaN(inputDOM.value) == false) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Age should be a number!');
+                            } 
+                            break;
+        case 'city' :if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'City is required');
+                            } 
+                            break;
+        case 'address' : if(inputDOM.value != '' && isNaN(inputDOM.value) == true) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Address is required');
+                            } 
+                            break;
+        case 'pincode' : 
+                        if(inputDOM.value != '' && isNaN(inputDOM.value) == false) {
+                            setSuccess(inputDOM);
+                            }
+
+                            else{
+                            setError(inputDOM, 'Pincode is required to be a 6 digit number');
+                            } 
+                            break;
+
+        case 'password' : if(inputDOM.value != '' && inputDOM.value.length >= 8) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Password is required');
+                            } 
+                            break;
+
+        case 'password2' : if(inputDOM.value == document.getElementById('password').value) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Password must be same!');
+                            } 
+                            break;
+        case 'email' : if(inputDOM.value.match(inputDOM.pattern) == true || inputDOM.value.length > 6) {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Please enter your E-mail address');
+                            } 
+                            break;
+                    
+ 
+        default: return;
+    }
+
+
+ switch(inputDOM.id){
+         case 'country' :  if(inputDOM.value != 'select') {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Select a Country from the drop down menu');
+                            } 
+                            break;
+        case 'state' : if(inputDOM.value != 'select') {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Select a State from the drop down menu');
+                            } 
+                            break;
+        case 'gender' :if(inputDOM.value != 'select') {
+                            setSuccess(inputDOM);
+                            }
+                            else{
+                            setError(inputDOM, 'Select a gender from the drop down menu');
+                            } 
+                            break;
+                        }
+    
+    */
