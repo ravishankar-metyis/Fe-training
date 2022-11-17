@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap');
+
+body{
+    background-color: #EDCECE;
+    font-family: Fregmanet Mono, sans-serif;
+}
+.container{
+    display: flex;
+    margin: 5vh auto 5vh auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top:35%;
+    color: azure;
+}
+#input,#display {
+  display: flex;
+  background-color: #313638;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  padding:5px 5px 5px 5px;
+  width:60vw;
+  margin-bottom:20px;
+}
+
+#input >h1 ,#display > h1 {
+  text-align: center; 
+}
+
+/*@media only screen and (max-width:450px){
+    width:80vw;
+}*/
+input{
+    border: none;  
+    background-color: #313638;
+    color: aquamarine;
+}
+
+ul{
+    list-style-type: none;
+}

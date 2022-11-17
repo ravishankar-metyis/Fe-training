@@ -41,14 +41,6 @@ function validateInputField(inputDOM) {
     setError(inputDOM,inputDOM.getAttribute('parse-error-msg'));
     return false;
    }
-
-  
-   
-   /*console.log(value)
-   console.log(pattern)
-   console.log(parent)
-*/
-
 }
 
 function validateSelectField(inputDOM) {
@@ -151,25 +143,3 @@ document.getElementById("submit").addEventListener("click", function(event){
   dispMsg(); 
 });
 
-
-
-/*
-const checker = () =>{
-    let formStateList = document.getElementsByClassName('success');
-    console.log('Successfull form fields = ' + formStateList.length);
-    let buttState =  document.getElementById("submit").disabled;
-    if(formStateList.length == 12){
-        buttState=true;
-      }
-    else{
-        buttState=false;
-    }
-    console.log(`Button active state has been toggled to ${buttState}`);
-  }
-*/
-
-  //setInterval(checker,1000);
-
-//const submitForm = () =>{
-
-//}
