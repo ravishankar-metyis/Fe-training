@@ -67,6 +67,7 @@ button{
     width:2rem;
     height:2rem;
     border: none;
+    font-size: 1rem;
    /* margin-bottom: 8px;*/
 }
 
@@ -82,20 +83,36 @@ li {
     width:100%;
 }
 
-.butt-end{
-    display: flex;
-    justify-content:end;
-}
 
+
+#display {
+    font-size: 1rem;
+}
 .item {
     margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: space-between;
 }
+
+
+.item > input{
+    justify-content: flex-start;
+}
+
+#list-items {
+    padding-left: 0px;
+   
+    
+}
+
 /*Mobile View*/
 
 @media only screen and (max-width:450px){
 #input,#display{
-    margin: 5vh 10px 5vh 10px ;
-    width:80vw;
+    margin: 2vh 0 2vh 0;
+    width:auto;
 }
 
 #input >h1 ,#display > h1 {
