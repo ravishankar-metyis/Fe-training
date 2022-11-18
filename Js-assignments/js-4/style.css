@@ -10,14 +10,10 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-top:35%;
     color: azure;
 }
 #input,#display {
-  display: flex;
   background-color: #313638;
-  flex-wrap: wrap;
-  justify-content: space-around;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   border-radius: 5px;
   padding:5px 5px 5px 5px;
@@ -26,18 +22,63 @@ body{
 }
 
 #input >h1 ,#display > h1 {
-  text-align: center; 
+  text-align: center;
+  font-size: 3.5rem;
+
 }
 
-/*@media only screen and (max-width:450px){
-    width:80vw;
-}*/
-input{
-    border: none;  
+@media only screen and (max-width:450px){
+#input,#display{
+    margin: 5vh 10px 5vh 10px ;
+    width:78vw;
+}
+
+#input >h1 ,#display > h1 {
+  text-align: center;
+  font-size: 2.7rem;
+
+}
+#input,#display {
+    width: 70%;
+}
+}
+
+
+#input > input{
+    border-bottom-style: dashed;
+    border-top-style: hidden;  
+    border-left-style: hidden;  
+    border-right-style: hidden;  
     background-color: #313638;
     color: aquamarine;
+    margin-left:5px;
+    margin-bottom: 8px;
+    width: 70%;
+    font-size:2rem;
+}
+input {
+    font-size: 2rem;
+}
+input:active{
+    outline:none;
+}
+button{
+    border-radius:3px;
+    width:2rem;
+    height:2rem;
+    border: none;
+   /* margin-bottom: 8px;*/
 }
 
 ul{
     list-style-type: none;
+}
+
+li {
+    width:100%;
+}
+
+.butt-end{
+    display: flex;
+    justify-content:end;
 }
