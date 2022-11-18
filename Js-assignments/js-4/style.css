@@ -24,24 +24,8 @@ body{
 #input >h1 ,#display > h1 {
   text-align: center;
   font-size: 3.5rem;
-
 }
 
-@media only screen and (max-width:450px){
-#input,#display{
-    margin: 5vh 10px 5vh 10px ;
-    width:78vw;
-}
-
-#input >h1 ,#display > h1 {
-  text-align: center;
-  font-size: 2.7rem;
-
-}
-#input,#display {
-    width: 70%;
-}
-}
 
 
 #input > input{
@@ -52,8 +36,9 @@ body{
     background-color: #313638;
     color: aquamarine;
     margin-left:5px;
+    margin-right:5px;
     margin-bottom: 8px;
-    width: 70%;
+    width: 98%;
     font-size:2rem;
 }
 input {
@@ -62,12 +47,31 @@ input {
 input:active{
     outline:none;
 }
+
+#submit, #save{
+    text-align: center;
+    align-items: center;
+    margin-left: 45%; 
+    border-radius:3px;
+    width:auto;
+    height:2rem;
+
+}
+
+#saveIndex {
+    display: none;
+}
+
 button{
     border-radius:3px;
     width:2rem;
     height:2rem;
     border: none;
    /* margin-bottom: 8px;*/
+}
+
+#save {
+ display: none;
 }
 
 ul{
@@ -81,4 +85,37 @@ li {
 .butt-end{
     display: flex;
     justify-content:end;
+}
+
+.item {
+    margin-bottom: 5px;
+}
+/*Mobile View*/
+
+@media only screen and (max-width:450px){
+#input,#display{
+    margin: 5vh 10px 5vh 10px ;
+    width:80vw;
+}
+
+#input >h1 ,#display > h1 {
+  text-align: center;
+  font-size: 2.3rem;
+
+}
+#input,#display {
+    width: 70%;
+
+}
+
+#todoIn{
+    margin-left:0;
+    margin-right:0px;
+    width: 70%;
+}
+
+#submit{
+    margin-left: 35%; 
+}
+
 }

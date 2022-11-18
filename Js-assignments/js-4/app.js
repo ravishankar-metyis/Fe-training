@@ -68,7 +68,7 @@ todoList.addEventListener('click', function(event) {
     deleteTodo(event.target.parentElement.getAttribute('data-key'));
   }
   if (event.target.classList.contains('edit-button')) {
-    editTodo(event.target.parentElement.getAttribute('data-key'));
+    edit(event.target.parentElement.getAttribute('data-key'));
   }
 });
 
@@ -88,18 +88,86 @@ const deleteTodo = (id) => {
 }
 
 
-const editTodo = (id) =>{
-
+ const editTodo = (id) =>{
     todos.forEach((item) =>{
         if (item.id == id) {
-          const li = document.getElementById(item.id);
-          li.innerHTML = `<input type="text" calss="checkbox" value="${item.name} id="${id}">
-          <button class="okay-button">✔️</button>`;
+        let itemInput = document.createElement('input');
+        itemInput.innerHTML = `<input type="text" id="${id}">`;
+        console.log('checklst changed to input field')
+        let buttonInput = document.createElement('button');
+        buttonInput.innerHTML = `<button class="okay-button">✔️</button>`;
+        itemInput.type = 'text';
+        itemInput.value = item.name;
+        itemInput.classList.add('edit');    
+        buttonInput.addEventListener('click', saveItem);
+         /* let editText = null;
+          editText = document.getElementById(id);
+          editText.innerHTML = `<input type="text" calss="" value="${item.name} id="${id}">
+          <button class="okay-button">✔️</button>`; 
+          console.log(editText.innerHTML);
+          todoList.append(editText.innerHTML);*/
           todoList.addEventListener('click', function(event) {
             if (event.target.classList.contains('okay-button')) {
-            displayTodo();
-  }               
-          });
+            //displayTodo();
+            console.log('okay buttton')
+            addToLocalStorage();
+                }});
         }
     })
 }
+
+
+const editTo0o = (event) =>{
+    let item = event.target.innerHTML;
+    let itemInput = document.createElement('input');
+    itemInput.type = 'text';
+    itemInput.value = item;
+    itemInput.classList.add('edit');
+    itemInput.addEventListener('keypress', saveItem);
+    itemInput.addEventListener('click', saveItem);
+    event.target.parentNode.prepend(itemInput);
+    event.target.remove();
+    itemInput.select();
+}
+
+const saveItem = (event) =>{
+    let inputValue = event.target.value;
+    if(event.target.value.length > 0 && (event.keyCode === 13 || event.type === 'clcik')){
+        let li = document.createElement('li');
+        li.addEventListener('click',editItem);
+        li.textContent = inputValue;
+        event.target.parentNode.prepend(li);
+        event.target.remove();
+    }
+}
+
+
+
+// differnet Approach ->  turns the main Text Input to the editing area
+const text = document.getElementById("todoIn");
+const addTaskButton = document.getElementById("submit");
+const saveTaskButton = document.getElementById("save");
+const listBox = document.getElementById("input");
+const saveInd = document.getElementById("saveIndex");
+
+const edit = (ind) => {
+    saveInd.value = ind;
+    let todo = localStorage.getItem("todos");
+    todos = JSON.parse(todo);
+    text.value = todos[ind];
+    addTaskButton.style.display = "none";
+    saveTaskButton.style.display = "block";
+}
+
+//Afteer editing the task - Save button
+saveTaskButton.addEventListener("click", () => {
+ let tod = localStorage.getItem("todos");
+ todos = JSON.parse(tod);
+ let id = saveInd.value;
+ todos[id] = text.value;
+ addTaskButton.style.display = "block";
+ saveTaskButton.style.display = "none";
+ text.value = "";
+ localStorage.setItem("todos", JSON.stringify(todos));
+ displayTodo();
+});
