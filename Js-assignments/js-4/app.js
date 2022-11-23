@@ -119,43 +119,23 @@ const deleteTodo = (id) => {
 //Afteer editing the task - Save button
 saveTaskButton.addEventListener("click", (event) => {
     console.log("Event => " + event); 
-    //console.log('exec save function, Value of item is ' + event.target.parentElement.innerHTML);
-    //console.log("SaveId = " + saveId + "\n The id of the parent Element is =>" + event.target.parentElement.id );
     event.target.parentElement.name = todoInput.value;
      if((event.target.parentElement.name !== '')){
-        //objIndex = todos.find((obj => obj.id == ));
-       // console.log("ObjIndex =>" + objIndex);
        console.log("SaveId =>" + saveId);
         let todo = {
-            id: saveId ,//document.querySelector(`li`).getAttribute('data-key') ,
+            id: Number(saveId),
             name: event.target.parentElement.name,
             completed: false
            }
-        //todos.push(todo);
 
-        //creates a copy of the main todos array
-   // let todosCopy = JSON.parse(JSON.stringify(todos));
-   // let found = todosCopy.find(s => s.id===todo.id);
-   let found = todos.find(s => s.id==todo.id);
+   let found = todos.find(s => s.id===todo.id);
     if (found) {
         Object.assign(found, todo);
     } else {
         todos.push(todo);
-        console.log("Pushed the new content inside the array");
     }
-
-    //todos = todosCopy;
     updateLocalStorage(todos);
     displayTodo(todos);
-
-    //Display the contentss of the new array
-    console.log("The new modified array is => ");
-    todos.forEach((item) => {
-        console.log(JSON.stringify(item) + " ");
-    });
-
-    console.log("Displaying SingleOBJ => "+ JSON.stringify(todo));
-    //todos = todoscopy      
     }
 
     addTaskButton.style.display = "block";
