@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Form Validation</title>
+    <link rel="stylesheet" href="../css/signup-style.css">
+	<script defer src="../js/app.js"></script>
+  </head>
+  <body>
+        <div class="container">
+            <!-- <div class="container-2"> -->
+            <div class="desktop-filler">
+                <div class="filler-pic"></div>
+                <div id="filler-txt">
+                    <h1>We Got your back!</h1>
+                    <p>All shipping and customs will be carged at the bare minimum rates. That means you will be saving a lot of money.</p>
+                </div>
+            </div>
+            <div class="form-container" style="display:block;">
+            <form id="form" method="POST">
+                
+                <h1>Sign in!</h1>
+                                
+                <div class="form-control">  <!--E-mail-->
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="text" data-missing-error="This field is required." title="Type E-mail address eg: example@website.com" parse-error-msg="Please enter a valid E-Mail address" value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Password-->
+                    <label for="password">Password</label>
+                    <input id="password" name="password"  type="password" data-missing-error="This field is required." parse-error-msg="Enter at least 6 charcters including numbers"  autocomplete="off" value maxlength="255" >
+                    <div class="error"></div>
+                </div>
+               
+                <button id="signin" type="submit">Sign in!</button>
+                <button id="signup" formaction="signup.html">Don't have an account? Register here</button>
+            </form>
+            </div>
+           <!--  </div>  Container 2 end-->
+        </div>
+        
+  </body>
+</html>

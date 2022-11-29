@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Form Validation</title>
+    <link rel="stylesheet" href="../css/signup-style.css">
+	<script defer src="../js/app.js"></script>
+  </head>
+  <body>
+        <div class="container">
+            <!-- <div class="container-2"> -->
+            <div class="desktop-filler">
+                <div class="filler-pic"></div>
+                <div id="filler-txt">
+                    <h1>We Got your back!</h1>
+                    <p>All shipping and customs will be carged at the bare minimum rates. That means you will be saving a lot of money.</p>
+                </div>
+            </div>
+            <div class="form-container" style="display:block;">
+            <form id="form" method="POST">
+                
+                <h1>Sign Up!</h1>
+                <div class="form-control">  <!--First Name-->
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" name="firstname" type="text" parse-error-msg="Please enter a valid First Name" data-missing-error="This field is required."  value pattern="^[a-zA-Z\s]+$" data-verified="">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Last Name-->
+                    <label for="lastname" >Last Name</label>
+                    <input id="lastname" name="lastname" type="text" maxlength="10" parse-error-msg="Please enter a valid Last Name" data-missing-error="This field is required." data-range-error="Must be 10 characters ."  alue pattern="^[a-zA-Z\s]+$">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--E-mail-->
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="text" data-missing-error="This field is required." title="Type E-mail address eg: example@website.com" parse-error-msg="Please enter a valid E-Mail address" value maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Gender-->
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender" class="form-control" parse-error-msg="Please select a Gender" data-missing-error="This field is required." >
+                        <option value="select">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="trans">Rather not say</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Age-->
+                    <label for="age">Age</label>
+                    <input id="age" name="age" type="text" parse-error-msg="Please enter a valid Age (in numbers)" data-missing-error="This field is required." pattern='^[1-9][0-9]?$|^150$'  minlength="1" maxlength="3">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Country-->
+                    <label for="country">Country</label>
+                   <!--  <input id="country" name="county" type="text"> -->
+                   <select name="country" id="country" class="form-control" data-missing-error="This field is required.">
+                        <option value="select">Select a Country</option>
+                        <option value="India">India</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Spain">Spain</option>
+                        <option value="USA">USA</option>
+                   </select>
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--state-->
+                    <label for="state">State</label>
+                    <select name="state" id="state" class="form-control" title="Select a State" data-missing-error="This field is required.">
+                        <option value="select">Select a State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select> 
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--city-->
+                    <label for="city">City</label>
+                    <input id="city" name="city" type="text" parse-error-msg="Enter a vlaid city name with letters" data-missing-error="This field is required." pattern="^[a-zA-Z\s]+$">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!-- Address-->
+                    <label for="address">Address</label>
+                    <input id="address" name="address" type="text" data-missing-error="This field is required.">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!-- Pincode -->
+                    <label for="pincode">Pincode</label>
+                    <input id="pincode" name="pincode" type="text" pattern='^[1-9][0-9]{5}$'>
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Password-->
+                    <label for="password">Password</label>
+                    <input id="password" name="password"  type="password" data-missing-error="This field is required." parse-error-msg="Enter at least 6 charcters including numbers"  autocomplete="off" value maxlength="255" >
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-control">  <!--Re-enter Password-->
+                    <label for="password2">Re-type password</label>
+                    <input id="password2" name="password2"  type="password"  data-missing-error="This field is required."  parse-error-msg="Password should be same as the one above." value maxlength="255" >
+                    <div class="error"></div>
+                </div>
+                <button id="submit" >Sign Up</button>
+                <button id="login" formaction="signin.html">Log In Instead ?</button>
+            </form>
+            </div>
+           <!--  </div>  Container 2 end-->
+        </div>
+        
+  </body>
+</html>
