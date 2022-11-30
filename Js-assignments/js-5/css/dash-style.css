@@ -1,0 +1,30 @@
+body{
+    background-color: #423E38;
+}
+
+#details {
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom: 20px;
+}
+#details > .card{
+    background-color:#423E38 ;
+    color: #FFDAC6;
+    border-color: #979187;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    margin-right:8px;
+}
+
+.cardTitle{
+    color:#BABD8D;
+}
+
+.jumbo{
+    background: #FFDAC6;
+}
+
+footer{
+    text-align: center;
+    color: #979187
+}

@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/dash-style.css">
     <title>Dashboard</title>
   </head>
   <body>
@@ -21,18 +21,101 @@
     <script src="../js/dashboard.js"></script>
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
-    
+      <a class="navbar-brand" href="#">DealSnatch</a>
     </nav>    
 
-    <div class="row">
-        <div class="col-4">
+    <div class="row jumbotron jumbo">
+        <!-- <div class="col-4">
             <img src="../assets/pp1.jpg" class="img-fluid" alt="Responsive image">
-        </div>
+        </div> 
         <div class="col-8 jumbotron">
-             <h1 class="display-4" id="namedisp">sefs</h1>
-             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+             <h1 class="display-6" id="namedisp">Hello sefs</h1>
+             <p class="lead">You can view your details below</p>
+        </div> -->
+        <div class="col">
+             <h1 class="display-6" id="namedisp">Hello sefs</h1>
+             <p class="lead">You can view your details below</p>
+        </div>
+        <div class="col">
+          <img src="../assets/pp1.jpg" class="img-fluid" alt="Responsive image">
         </div>
     </div>
+
+    <div class="row" id="details">
+      <div class="col card">
+        <h4 class="card-title cardTitle">First Name</h4>
+        <p id="fnameDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
+      
+      <div class="col card">
+        <h4 class="card-title cardTitle">Last Name</h4>
+        <p id="lnameDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
+      
+     <div class="w-100"></div>
+    
+     <div class="col card">
+        <h4 class="card-title cardTitle">Gender</h4>
+        <p id="genderDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
+    
+    <div class="col card">
+        <h4 class="card-title cardTitle">Age</h4>
+        <p id="ageDisp" class="card-text">69</p>
+      </div>
+
+     <div class="w-100"></div>
+
+      <div class="col card">
+        <h4 class="card-title cardTitle">Email</h4>
+        <p id="emailDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
+
+
+     <div class="w-100"></div>
+
+      <div class="col card">
+        <h4 class="card-title cardTitle">Address</h4>
+        <p id="addressDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
+      
+     <div class="w-100"></div>
+
+      <div class="col card">
+        <h4 class="card-title cardTitle">Pincode</h4>
+        <p id="pincodeDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
+      
+      <div class="col card">
+        <h4 class="card-title cardTitle">City</h4>
+        <p id="cityDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div> 
+     
+     <div class="w-100"></div>
+
+      <div class="col card">
+        <h4 class="card-title cardTitle">State</h4>
+        <p id="stateDisp" class="card-text">Lorem ipsum</p>
+      </div>
+      
+      <div class="col card">
+        <h4 class="card-title cardTitle">Country</h4>
+        <p id="countryDisp" class="card-text"></p>
+      </div>
+      
+            
+     <div class="w-100"></div>
+
+      <div class="col card">
+        <h4 class="card-title cardTitle">Password</h4>
+        <p id="passwordDisp" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, s</p>
+      </div>
     </div>
+
+    </div>
+
+    <footer>
+      Created by Ravi Shankar S
+    </footer>
 </body>
 </html>

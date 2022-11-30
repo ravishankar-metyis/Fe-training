@@ -195,7 +195,7 @@ function signin() {
     //console.log(formData[i].email + "\n" +  document.getElementById('email').value + "\n\n" + formData[i].password + "\n" + document.getElementById('password').value) 
     if((formData[i].email == document.getElementById('email').value) && (formData[i].password == document.getElementById('password').value)){
      const userDetails = formData[i];
-     exports.userDetails; console.log("user details exported")
+     exports.userDetails; console.log("user details exported, " + exports.userDetails)
      location.replace("../pages/dashboard.html");
      return
     }
