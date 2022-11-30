@@ -1,3 +1,5 @@
+//================================================================================================================================
+//Sets Red border for incorrect fields
 const setError = (element, message) => {
   const formControl = element.parentElement;
   const errorDisp = formControl.querySelector('.error');
@@ -6,6 +8,8 @@ const setError = (element, message) => {
   formControl.classList.remove('success');
 }
 
+//================================================================================================================================
+//Sets Green Border for correctly validated elements
 const setSuccess = (element) => {
   const formControl = element.parentElement;
   const errorDisp = formControl.querySelector('.error');
@@ -16,6 +20,8 @@ const setSuccess = (element) => {
 
 
 
+//================================================================================================================================
+//Validation function
 function validateInputField(inputDOM) {
   let value = inputDOM.value;
   let pattern = inputDOM.pattern;
@@ -43,6 +49,8 @@ function validateInputField(inputDOM) {
   }
 }
 
+//================================================================================================================================
+//Validates the select dropdown fields
 function validateSelectField(inputDOM) {
 
   let value = inputDOM.value;
@@ -100,6 +108,8 @@ for (j = 0; j < formSelect.length; j++) {
 }
 
 
+//================================================================================================================================
+//displays the Thank you message when a user signs up
 const dispMsg = () => {
 
   for (i = 0; i < formInput.length; i++) {
@@ -141,6 +151,7 @@ const dispMsg = () => {
   }
 }
 //====================================================================================
+//On buttonclick - Signup
 if(document.getElementById("submit")){
 document.getElementById("submit").addEventListener("click", function(event) {
   event.preventDefault();
@@ -150,11 +161,14 @@ document.getElementById("submit").addEventListener("click", function(event) {
 }
 
 //====================================================================================
+//Storing the collected signup data
 const updateLocalStorage = (x) => {
   localStorage.setItem('formData',JSON.stringify(x));
 }
 // Storing Data in LocalStorage
 let formData = [];
+
+//================================================================================================================================
 //Get data from the browser local storage.
 const getFromLocalStorage = () => {
   console.log("getFromLocalStorage started")
@@ -164,6 +178,8 @@ const getFromLocalStorage = () => {
 }
 getFromLocalStorage();
 
+//================================================================================================================================
+//data stored as array of objects
 const signup = () => {
   console.log("Length of formData is = " + formData.length);
    
@@ -217,7 +233,7 @@ countryDisp.innerText = `Hello! ${userDetails.country}`
 passDisp.innerText = `Hello! ${userDetails.password}`
 }
 //================================================================================================================================
-//Sign in
+//Sign in - checks the input fields for email and matching password
 function signin() {
   for(i=0;i<formData.length;i++){
 
@@ -229,15 +245,28 @@ function signin() {
      dashboard(userDetails);
      return
     }
-    else {
+    else if((formData[i].email !== document.getElementById('email').value) && (formData[i].password !== document.getElementById('password').value)) {
+      console.log("Onject not found in array object #"+ i + ", checking the next array object")
+      if(i == formData.length -1){
+        window.alert("The Credentials you have entered are incorrect. Please try again");
+      }
+      continue
+    }
+    else if((formData.length == 0) || isNaN(formData.length)){
+      console.log("The localstorage is Empty")
+    }
+    else{
       window.alert("The Credentials you have entered are incorrect. Please try again");
-      return
     }
   }
 }
 
-
+try{
 document.getElementById("signin").addEventListener("click", function(event) {
   event.preventDefault();
   signin();
 });
+}
+catch(error){
+  console.log(error);
+}
