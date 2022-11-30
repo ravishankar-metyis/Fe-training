@@ -205,7 +205,12 @@ updateLocalStorage(formData);
 //================================================================================================================================
 //Dashboard display
 function dashboard(userDetails) {
+console.log('dashboard function has started execution')
+
+//Changed the page to Dashboard.html
+location.replace("../pages/dashboard.html");
 console.log("here ya go: "+ userDetails) //for debugging ;-)
+
 
 let nameDisplay = document.getElementById('dispname');
 let fnameDisp = document.getElementById('fnameDisp'); 
@@ -229,6 +234,7 @@ genderDisp.innerText = `Hello! ${userDetails.gender}`
 addressDisp.innerText = `Hello! ${userDetails.address}`
 pincodeDisp.innerText = `Hello! ${userDetails.pincode}`
 cityDisp.innerText = `Hello! ${userDetails.city}`
+stateDisp.innerText = `Hello! ${userDetails.state}`
 countryDisp.innerText = `Hello! ${userDetails.country}`
 passDisp.innerText = `Hello! ${userDetails.password}`
 }
@@ -240,15 +246,13 @@ function signin() {
     //console.log(formData[i].email + "\n" +  document.getElementById('email').value + "\n\n" + formData[i].password + "\n" + document.getElementById('password').value) 
     if((formData[i].email == document.getElementById('email').value) && (formData[i].password == document.getElementById('password').value)){
      const userDetails = formData[i];
-     //exports.userDetails; console.log("user details exported, " + exports.userDetails)
-     location.replace("../pages/dashboard.html");
      dashboard(userDetails);
      return
     }
     else if((formData[i].email !== document.getElementById('email').value) && (formData[i].password !== document.getElementById('password').value)) {
       console.log("Onject not found in array object #"+ i + ", checking the next array object")
-      if(i == formData.length -1){
-        window.alert("The Credentials you have entered are incorrect. Please try again");
+      if((i == formData.length -1)  && ((formData[i].email !== document.getElementById('email').value) && (formData[i].password !== document.getElementById('password').value))){
+        window.alert("The Credentials you have entered are incorrect Or your data is not registered in the Database. Please try again");
       }
       continue
     }
