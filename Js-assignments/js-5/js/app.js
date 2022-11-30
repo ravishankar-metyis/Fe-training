@@ -185,18 +185,48 @@ const signup = () => {
 updateLocalStorage(formData);
 }
 
+
+//================================================================================================================================
+//Dashboard display
+function dashboard(userDetails) {
+console.log("here ya go: "+ userDetails) //for debugging ;-)
+
+let nameDisplay = document.getElementById('dispname');
+let fnameDisp = document.getElementById('fnameDisp'); 
+let lnameDisp = document.getElementById('lnameDisp'); 
+let emailDisp = document.getElementById('emailDisp'); 
+let ageDisp = document.getElementById('ageDisp'); 
+let genderDisp = document.getElementById('genderDisp'); 
+let addressDisp = document.getElementById('addressDisp'); 
+let pincodeDisp = document.getElementById('pincodeDisp'); 
+let cityDisp = document.getElementById('cityDisp'); 
+let stateDisp = document.getElementById('stateDisp'); 
+let countryDisp = document.getElementById('countryDisp');
+let passDisp = document.getElementById('passwordDisp');
+
+nameDisplay.innerText = `Hello! ${userDetails.firstname} ${userDetails.lastname}`
+fnameDisp.innerText = `Hello! ${userDetails.firstname}`
+lnameDisp.innerText = `Hello! ${userDetails.lastname}`
+emailDisp.innerText = `Hello! ${userDetails.email}`
+ageDisp.innerText = `Hello! ${userDetails.age}`
+genderDisp.innerText = `Hello! ${userDetails.gender}`
+addressDisp.innerText = `Hello! ${userDetails.address}`
+pincodeDisp.innerText = `Hello! ${userDetails.pincode}`
+cityDisp.innerText = `Hello! ${userDetails.city}`
+countryDisp.innerText = `Hello! ${userDetails.country}`
+passDisp.innerText = `Hello! ${userDetails.password}`
+}
 //================================================================================================================================
 //Sign in
-//let userDetails = []
-var exports= {};
 function signin() {
   for(i=0;i<formData.length;i++){
 
     //console.log(formData[i].email + "\n" +  document.getElementById('email').value + "\n\n" + formData[i].password + "\n" + document.getElementById('password').value) 
     if((formData[i].email == document.getElementById('email').value) && (formData[i].password == document.getElementById('password').value)){
      const userDetails = formData[i];
-     exports.userDetails; console.log("user details exported, " + exports.userDetails)
+     //exports.userDetails; console.log("user details exported, " + exports.userDetails)
      location.replace("../pages/dashboard.html");
+     dashboard(userDetails);
      return
     }
     else {
