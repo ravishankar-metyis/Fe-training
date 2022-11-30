@@ -181,7 +181,7 @@ getFromLocalStorage();
 //================================================================================================================================
 //data stored as array of objects
 const signup = () => {
-  console.log("Length of formData is = " + formData.length);
+  //console.log("Length of formData is = " + formData.length);
    
   let user = {
     firstname: document.getElementById('firstname').value,
