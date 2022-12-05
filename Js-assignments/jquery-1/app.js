@@ -18,17 +18,29 @@ async function dispProducts(){
     let rating =  product.rating;
     let title =  product.title;
 
-    showDiv.append(`Title: ${title} \n 
-                    Image: <img src="${image}"></img> \n 
-                    Description: ${description} \n
-                    Product-ID: ${id} \n
-                    `  )
+    showDiv.append(`<div class="card col-4 product shadow p-3 mb-5 bg-body rounded" id="${id}" style="width: 18rem;">
+                      <img  src="${image}" class="card-img-top "></img>  
+                      <div class="card-body">
+                        <h5 class="card-title overflow-hidden ">${title}</h5>
+                        <!--<p class="card-text overflow-hidden " style="text-overflow: ellipsis;">${description}</p>-->
+                        <span>Rating - ${JSON.stringify(rating.rate)}</span> </br> 
+                        <span>Reviews - ${JSON.stringify(rating.count)}</span>  
+                      </div>
+                    </div>`  )
     }
 }
+
+//Show Description on mouse HOVER
+/*function hoverDesc{
+let a ='sfsf';
+}*/
          $(document).ready(function() {
-         	$('#clickme').click(function(){
+                dispProducts();
+         	      $('#clickme').click(function(){
                 console.log('Click registered');
                 dispProducts();
                 console.log('function has been executed');
           	});
+
+
           });
